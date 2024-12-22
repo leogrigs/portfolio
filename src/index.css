@@ -81,6 +81,10 @@
 }
 
 html {
+  scroll-behavior: smooth;
+}
+
+html {
   scrollbar-width: thin;
   scrollbar-color: #1e293b #0f172a;
 }
