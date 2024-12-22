@@ -1,6 +1,9 @@
 export default function Summary() {
   return (
-    <section className="h-screen flex flex-col justify-center items-center gap-12 px-6 md:px-16 bg-gradient-to-br from-slate-950 via-gray-800 to-black dark:from-white dark:via-gray-100 dark:to-gray-300 transition-colors duration-300">
+    <section
+      id="summary"
+      className="h-screen flex flex-col justify-center items-center gap-12 px-6 md:px-16 bg-slate-900 transition-colors duration-300"
+    >
       <div className="fadeup-enter text-left max-w-3xl">
         <h1 className="text-sm text-sky-400 dark:text-sky-600 mb-2 transition-colors duration-300">
           Hi, my name is
