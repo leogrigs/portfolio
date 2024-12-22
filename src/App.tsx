@@ -1,5 +1,6 @@
 import "./App.css";
 import { AppNavigationMenu } from "./components/AppNavigationMenu";
+import Experience from "./sections/Experience";
 import Summary from "./sections/Summary";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <main>
       <AppNavigationMenu />
       <Summary />
+      <Experience />
     </main>
   );
 }
