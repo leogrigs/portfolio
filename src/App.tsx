@@ -5,7 +5,7 @@ import Summary from "./sections/Summary";
 
 function App() {
   return (
-    <main>
+    <main className="bg-slate-900">
       <AppNavigationMenu />
       <Summary />
       <Experience />
