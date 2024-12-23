@@ -4,6 +4,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { href: "#summary", text: "Summary" },
@@ -14,9 +15,9 @@ const links = [
 
 export function AppNavigationMenu() {
   return (
-    <header className="fixed top-0 z-10 flex justify-center items-center w-full bg-slate-900">
+    <header className="fixed top-0 z-10 flex justify-end px-12 items-center w-full bg-slate-900">
       <NavigationMenu>
-        <NavigationMenuList className="space-x-6 px-8 py-4">
+        <NavigationMenuList className="space-x-6 px-12 py-4">
           {links.map((link) => (
             <NavigationMenuItem>
               <NavigationMenuLink
@@ -27,6 +28,9 @@ export function AppNavigationMenu() {
               </NavigationMenuLink>
             </NavigationMenuItem>
           ))}
+          <NavigationMenuItem>
+            <ThemeToggle />
+          </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
     </header>
