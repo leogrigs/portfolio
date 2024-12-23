@@ -15,6 +15,29 @@
   }
 }
 
+@layer utilities {
+  .after-line {
+    position: relative;
+  }
+
+  .after-line::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 24px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+
+  .after-line:hover::after {
+    width: 100%;
+    left: 0;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
