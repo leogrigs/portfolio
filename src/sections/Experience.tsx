@@ -4,7 +4,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="min-h-screen flex flex-col justify-center items-center px-6 md:px-16 pt-24 bg-slate-900 text-slate-200"
+      className="min-h-screen flex flex-col justify-start items-center px-6 md:px-16 pt-24 bg-slate-900 text-slate-200"
     >
       <header className="text-center mb-12">
         <h2 className="text-3xl font-bold text-blue-400 mb-2">Experience</h2>
