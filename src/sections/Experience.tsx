@@ -1,5 +1,3 @@
-"use client";
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Experience() {
@@ -34,19 +32,11 @@ export default function Experience() {
 
         <div className="w-full md:w-2/3">
           <Tabs defaultValue="aws-modernization" className="w-full">
-            <TabsList className="flex justify-start md:justify-center space-x-4 bg-slate-900 p-2 rounded-t-md">
-              <TabsTrigger
-                value="aws-modernization"
-                className="data-[state=active]:text-slate-100 text-slate-300 data-[state=active]:bg-slate-900 data-[state=active]:border-b data-[state=active]:border-sky-400 rounded-none"
-              >
+            <TabsList>
+              <TabsTrigger value="aws-modernization">
                 AWS Modernization
               </TabsTrigger>
-              <TabsTrigger
-                value="private-bank"
-                className="data-[state=active]:text-slate-100 text-slate-300 data-[state=active]:bg-slate-900 data-[state=active]:border-b data-[state=active]:border-sky-400 rounded-none"
-              >
-                Itaú Private Bank
-              </TabsTrigger>
+              <TabsTrigger value="private-bank">Itaú Private Bank</TabsTrigger>
             </TabsList>
             <TabsContent value="aws-modernization">
               <div className="mt-8 space-y-3">
