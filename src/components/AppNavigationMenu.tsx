@@ -21,7 +21,7 @@ export function AppNavigationMenu() {
             <NavigationMenuItem>
               <NavigationMenuLink
                 href={link.href}
-                className="text-slate-300 hover:text-sky-400 hover:border-b border-sky-400 transition-colors duration-300 text-sm md:text-base"
+                className="text-slate-300 no-underline after-line transition-colors duration-300 text-sm md:text-base"
               >
                 {link.text}
               </NavigationMenuLink>
