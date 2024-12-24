@@ -3,7 +3,7 @@ import AppSectionWrapper from "@/components/AppSectionWrapper";
 export default function Welcome() {
   return (
     <AppSectionWrapper sectionId="welcome" nextSectionId="about">
-      <div className="flex flex-col justify-center max-w-4xl mx-auto">
+      <div className="flex flex-col justify-center">
         {/* Text Content */}
         <h1 className="text-sm md:text-md bg-gradient-to-r from-sky-400 to-slate-50 bg-clip-text text-transparent mb-2">
           Hi, my name is
