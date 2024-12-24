@@ -1,3 +1,4 @@
+import AppNextSectionButton from "@/components/AppNextSectionButton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Experience() {
@@ -84,6 +85,9 @@ export default function Experience() {
             </ul>
           </TabsContent>
         </Tabs>
+      </div>
+      <div className="flex justify-center mt-auto mb-24">
+        <AppNextSectionButton sectionId="projects" />
       </div>
     </section>
   );
