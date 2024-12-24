@@ -18,7 +18,7 @@ export default function AppSectionWrapper({
     >
       {children}
       <div className="flex justify-center mt-auto mb-24">
-        <AppNextSectionButton sectionId={nextSectionId ?? "summary"} />
+        <AppNextSectionButton sectionId={nextSectionId ?? "welcome"} />
       </div>
     </section>
   );
