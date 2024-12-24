@@ -3,17 +3,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Experience() {
   return (
-    <AppSectionWrapper sectionId="experience">
-      <div className="flex flex-col justify-start items-center px-6 md:px-16 pt-24 bg-slate-900 text-slate-200">
-        <header className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-blue-400 mb-2">Experience</h2>
-          <p className="text-sm md:text-lg text-slate-400">
-            Highlights of my professional journey.
-          </p>
-        </header>
-
+    <AppSectionWrapper sectionId="experience" sectionTitle="Experience">
+      <div className="flex flex-col justify-start items-center bg-slate-900 text-slate-200">
         <div className="w-full max-w-6xl">
-          {/* Experience Header */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold text-white">
               Front-End Software Engineer{" "}
@@ -34,7 +26,6 @@ export default function Experience() {
             </p>
           </div>
 
-          {/* Tabs Section */}
           <Tabs defaultValue="aws-modernization">
             <TabsList className="flex space-x-4 border-b border-slate-700">
               <TabsTrigger value="aws-modernization">
