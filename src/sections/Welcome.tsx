@@ -2,41 +2,28 @@ import AppSectionWrapper from "@/components/AppSectionWrapper";
 
 export default function Welcome() {
   return (
-    <AppSectionWrapper sectionId="welcome" nextSectionId="experience">
-      <div className="flex flex-col-reverse lg:flex-row justify-center items-center gap-8 lg:gap-16 px-6 md:px-16  ">
-        <div className="fadeup-enter text-left lg:max-w-full lg:w-1/2">
-          <h1 className="text-sm md:text-md tracking-tight text-blue-400 dark:text-sky-600 mb-2 transition-colors duration-300">
-            Hi, my name is
-          </h1>
-
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight lg:text-5xl text-white dark:text-gray-800 mb-4 leading-relaxed transition-colors duration-300">
-            Leonardo Grigorio Ferreira
-          </h2>
-
-          <h3 className="pb-2 text-2xl md:text-3xl font-semibold tracking-tight text-blue-400 dark:text-sky-500 mb-6 transition-colors duration-300">
-            Front-End Developer
-          </h3>
-
-          <p className="text-sm md:text-lg text-muted-foreground leading-relaxed transition-colors duration-300">
-            I’m a passionate and dedicated{" "}
-            <strong className="text-white">Front-End Developer</strong> with
-            over{" "}
-            <strong className="text-white">three years of experience</strong>{" "}
-            specializing in <strong className="text-white">Angular</strong>. I
-            enjoy creating intuitive, accessible, and user-friendly web
-            interfaces for a diverse audience. Currently, I am expanding my
-            expertise in <strong className="text-white">React</strong>,{" "}
-            <strong className="text-white">AWS</strong>, and modern web
-            technologies to deliver scalable and innovative solutions.
-          </p>
-        </div>
-        <div className="w-56 md:w-72">
-          <img
-            className="rounded-full w-full h-auto object-cover border-2 border-slate-100"
-            src="https://media.licdn.com/dms/image/v2/D4D03AQFwyDAhI0EPEA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1728589234021?e=1740614400&v=beta&t=y6wvt45X0d2oswFED4eAGuxFJQPcVRTcWZdN7toii1c"
-            alt="Leonardo Grigorio Ferreira"
-          />
-        </div>
+    <AppSectionWrapper sectionId="welcome" nextSectionId="about">
+      <div className="flex flex-col justify-center max-w-4xl mx-auto">
+        {/* Text Content */}
+        <h1 className="text-sm md:text-md bg-gradient-to-r from-sky-400 to-slate-50 bg-clip-text text-transparent mb-2">
+          Hi, my name is
+        </h1>
+        <h2 className="text-3xl md:text-7xl font-extrabold bg-gradient-to-r from-slate-300 to-sky-400 bg-clip-text text-transparent leading-relaxed">
+          Leonardo
+        </h2>
+        <h2 className="text-3xl md:text-7xl font-extrabold bg-gradient-to-r from-slate-300 to-sky-400 bg-clip-text text-transparent mb-6 !leading-tight">
+          Grigorio Ferreira.
+        </h2>
+        <h3 className="text-2xl md:text-3xl font-semibold bg-gradient-to-r from-sky-400 to-slate-50 bg-clip-text text-transparent mb-12">
+          Front-End Developer
+        </h3>
+        <p className="text-md md:text-lg font-light text-slate-400 leading-relaxed mb-6">
+          I’m a dedicated Front-End Developer with over three years of
+          experience, specializing in Angular. I create intuitive, accessible,
+          and user-friendly web interfaces for diverse audiences while expanding
+          my expertise in React, AWS, and modern web technologies to deliver
+          innovative and scalable solutions.
+        </p>
       </div>
     </AppSectionWrapper>
   );

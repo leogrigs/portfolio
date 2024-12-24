@@ -16,7 +16,7 @@ const links = [
 
 export function AppNavigationMenu() {
   return (
-    <header className="fixed top-0 z-10 flex justify-end px-12 items-center w-full bg-slate-900">
+    <header className="fixed top-0 z-10 flex justify-end px-12 items-center w-full bg-slate-950">
       <NavigationMenu>
         <NavigationMenuList className="space-x-6 px-12 py-4">
           {links.map((link) => (

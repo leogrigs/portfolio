@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 export default function Experience() {
   return (
     <AppSectionWrapper sectionId="experience" sectionTitle="Experience">
-      <div className="flex flex-col justify-start items-center bg-slate-900 text-slate-200">
+      <div className="flex flex-col justify-start items-center bg-slate-950 text-slate-200">
         <div className="w-full max-w-6xl">
           <div className="mb-8">
             <h3 className="text-xl font-semibold text-white">
