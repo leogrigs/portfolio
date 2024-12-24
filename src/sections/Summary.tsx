@@ -1,11 +1,8 @@
-import AppNextSectionButton from "@/components/AppNextSectionButton";
+import AppSectionWrapper from "@/components/AppSectionWrapper";
 
 export default function Summary() {
   return (
-    <section
-      id="summary"
-      className="min-h-screen flex flex-col justify-center transition-colors duration-300"
-    >
+    <AppSectionWrapper sectionId="summary" nextSectionId="experience">
       <div className="flex flex-col-reverse mt-auto lg:flex-row justify-center items-center gap-8 lg:gap-16 px-6 md:px-16  ">
         <div className="fadeup-enter text-left lg:max-w-full lg:w-1/2">
           <h1 className="text-sm md:text-md tracking-tight text-blue-400 dark:text-sky-600 mb-2 transition-colors duration-300">
@@ -41,9 +38,6 @@ export default function Summary() {
           />
         </div>
       </div>
-      <div className="flex justify-center mt-auto mb-24">
-        <AppNextSectionButton sectionId="experience" />
-      </div>
-    </section>
+    </AppSectionWrapper>
   );
 }
