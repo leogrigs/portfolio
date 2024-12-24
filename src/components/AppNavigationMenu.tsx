@@ -1,9 +1,3 @@
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
@@ -16,24 +10,25 @@ const links = [
 
 export function AppNavigationMenu() {
   return (
-    <header className="fixed top-0 z-10 flex justify-end px-12 items-center w-full bg-slate-900">
-      <NavigationMenu>
-        <NavigationMenuList className="space-x-6 px-12 py-4">
-          {links.map((link) => (
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                href={link.href}
-                className="text-slate-300 no-underline after-line transition-colors duration-300 text-sm md:text-base"
-              >
-                {link.text}
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          ))}
-          <NavigationMenuItem>
-            <ThemeToggle />
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-    </header>
+    <nav className="fixed top-0 right-0 z-10 border-l border-slate-800 flex flex-col items-end p-8 bg-slate-950 h-full">
+      <ul className="space-y-8 text-right">
+        {links.map((link, index) => (
+          <li key={link.href} className="flex items-center">
+            <span className="text-sky-400 text-sm md:text-base w-8 text-center">{`0${
+              index + 1
+            }.`}</span>
+            <a
+              href={link.href}
+              className="text-slate-300 hover:text-sky-400 no-underline after-line transition-colors duration-300 text-sm md:text-base pl-2"
+            >
+              {link.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <div className="mt-auto pr-4">
+        <ThemeToggle />
+      </div>
+    </nav>
   );
 }

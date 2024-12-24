@@ -12,7 +12,7 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      "flex justify-start md:justify-center space-x-4 bg-slate-900 p-2 rounded-t-md",
+      "flex justify-start md:justify-center space-x-4 bg-slate-950 p-2 rounded-t-md",
       className
     )}
     {...props}
@@ -27,7 +27,7 @@ const TabsTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "data-[state=active]:text-slate-100 text-slate-300 no-underline after-line data-[state=active]:bg-slate-900 data-[state=active]:border-b data-[state=active]:border-white rounded-none",
+      "data-[state=active]:text-slate-100 text-slate-300 no-underline after-line data-[state=active]:bg-slate-950 data-[state=active]:border-b data-[state=active]:border-white rounded-none",
       className
     )}
     {...props}

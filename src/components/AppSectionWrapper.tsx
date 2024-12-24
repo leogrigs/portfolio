@@ -16,14 +16,14 @@ export default function AppSectionWrapper({
   return (
     <section
       id={sectionId}
-      className="min-h-screen flex flex-col py-24 justify-between transition-colors duration-300"
+      className="min-h-screen flex flex-col py-8 justify-between transition-colors duration-300"
     >
       <div>
-        <h2 className="text-3xl text-white font-bold text-center">
+        <h2 className="text-3xl bg-gradient-to-r from-sky-400 to-slate-50 bg-clip-text text-transparent font-bold ml-24">
           {sectionTitle}
         </h2>
       </div>
-      {children}
+      <div className="max-w-4xl pl-24">{children}</div>
       <div className="flex justify-center">
         <AppNextSectionButton sectionId={nextSectionId ?? "welcome"} />
       </div>
