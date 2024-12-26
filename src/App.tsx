@@ -9,7 +9,7 @@ import Welcome from "./sections/Welcome";
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <main className="bg-slate-950">
+      <main className="bg-background">
         <AppNavigationMenu />
         <Welcome />
         <About />
