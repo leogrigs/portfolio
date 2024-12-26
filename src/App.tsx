@@ -3,6 +3,7 @@ import { AppNavigationMenu } from "./components/AppNavigationMenu";
 import { ThemeProvider } from "./providers/theme-provider";
 import About from "./sections/About";
 import Experience from "./sections/Experience";
+import Projects from "./sections/Projects";
 import Welcome from "./sections/Welcome";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Welcome />
         <About />
         <Experience />
+        <Projects />
       </main>
     </ThemeProvider>
   );
