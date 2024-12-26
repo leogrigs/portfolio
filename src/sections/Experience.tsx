@@ -8,10 +8,10 @@ export default function Experience() {
       sectionTitle="Experience"
       nextSectionId="projects"
     >
-      <div className="flex flex-col justify-start items-center bg-slate-950 text-slate-200">
+      <div className="flex flex-col justify-start items-center bg-background">
         <div className="w-full max-w-6xl">
           <div className="mb-8">
-            <h3 className="text-xl font-semibold text-white">
+            <h3 className="text-xl font-semibold">
               Front-End Software Engineer{" "}
               <a
                 href="https://www.nttdata.com"
@@ -22,8 +22,8 @@ export default function Experience() {
                 @ NTT DATA
               </a>
             </h3>
-            <p className="text-sm text-slate-400">Nov 2021 – Present</p>
-            <p className="text-sm md:text-base text-slate-300 mt-2">
+            <p className="text-sm">Nov 2021 – Present</p>
+            <p className="text-sm md:text-base mt-2">
               Building secure, accessible, and scalable web applications for the
               largest private bank in Latin America, ensuring compliance and
               exceptional user experiences.
@@ -42,7 +42,7 @@ export default function Experience() {
               <h4 className="text-lg font-semibold text-blue-400">
                 AWS Modernization
               </h4>
-              <ul className="list-disc pl-6 space-y-2 text-slate-300 mt-4">
+              <ul className="list-disc pl-6 space-y-2 mt-4">
                 <li>
                   Migrated non-logged pages from AEM to Angular + Node.js + AWS,
                   cutting operational costs.
@@ -62,7 +62,7 @@ export default function Experience() {
               <h4 className="text-lg font-semibold text-blue-400">
                 Itaú Private Bank
               </h4>
-              <ul className="list-disc pl-6 space-y-2 text-slate-300 mt-4">
+              <ul className="list-disc pl-6 space-y-2 mt-4">
                 <li>
                   Developed a multi-language (English, Portuguese, Spanish)
                   application for clients in Miami, Zurich, and Brazil.
