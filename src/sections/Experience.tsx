@@ -3,7 +3,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Experience() {
   return (
-    <AppSectionWrapper sectionId="experience" sectionTitle="Experience">
+    <AppSectionWrapper
+      sectionId="experience"
+      sectionTitle="Experience"
+      nextSectionId="projects"
+    >
       <div className="flex flex-col justify-start items-center bg-slate-950 text-slate-200">
         <div className="w-full max-w-6xl">
           <div className="mb-8">
