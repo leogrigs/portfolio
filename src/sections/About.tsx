@@ -9,18 +9,18 @@ export default function About() {
     >
       <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
         {/* Text Section */}
-        <div className="lg:w-1/2 space-y-4 mb-8">
-          <p className="text-md md:text-lg text-slate-400">
+        <div className="lg:w-1/2 space-y-4 mb-8 text-muted-foreground">
+          <p className="text-md md:text-lg">
             Hi, I’m Leonardo, a Front-End Developer focused on building
             accessible and high-performing web applications with expertise in
             Angular, SPAs, and microfrontends.
           </p>
-          <p className="text-md md:text-lg text-slate-400">
+          <p className="text-md md:text-lg">
             At NTT DATA, I’ve contributed to modernizing web platforms for Itaú
             Private Bank, enhancing user experience and accessibility, and
             achieving impactful results like a 400% engagement increase.
           </p>
-          <p className="text-md md:text-lg text-slate-400">
+          <p className="text-md md:text-lg">
             I bring skills in Angular Elements, RxJS, NgRx, and Node.js, along
             with a strong foundation in agile methodologies and accessibility
             best practices.
