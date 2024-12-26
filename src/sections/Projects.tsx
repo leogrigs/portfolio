@@ -2,11 +2,7 @@ import AppSectionWrapper from "@/components/AppSectionWrapper";
 
 export default function Projects() {
   return (
-    <AppSectionWrapper
-      sectionTitle="Projects"
-      sectionId="projects"
-      nextSectionId="contact"
-    >
+    <AppSectionWrapper sectionTitle="Projects" sectionId="projects">
       <h3 className="mb-8">
         Here are some of the projects I've worked on. Click on a project to
         learn more.
