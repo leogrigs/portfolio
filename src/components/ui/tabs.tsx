@@ -27,7 +27,7 @@ const TabsTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "data-[state=active]:text-slate-100 text-slate-300 no-underline after-line data-[state=active]:bg-background data-[state=active]:border-b data-[state=active]:border-white rounded-none",
+      "no-underline after-line data-[state=active]:bg-background data-[state=active]:border-b data-[state=active]:border-white rounded-none",
       className
     )}
     {...props}
