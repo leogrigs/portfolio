@@ -10,11 +10,11 @@ const links = [
 
 export function AppNavigationMenu() {
   return (
-    <nav className="fixed top-0 left-0 z-10 border-r border-border flex flex-col items-end p-8 bg-background h-full">
+    <nav className="fixed top-0 left-0 z-10 border-r border-border flex flex-col p-8 bg-background h-full">
       <ul className="space-y-8 text-right">
         {links.map((link, index) => (
-          <li key={link.href} className="flex items-center">
-            <span className="text-sky-400 text-sm md:text-base w-8 text-center">{`0${
+          <li key={link.href} className="flex">
+            <span className="text-sky-400 text-sm md:text-base w-8">{`0${
               index + 1
             }.`}</span>
             <a
