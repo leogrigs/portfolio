@@ -3,7 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
-      sans: ["Nunito", "sans-serif"],
+      sans: ["Poppins", "sans-serif"],
     },
     extend: {
       borderRadius: {
