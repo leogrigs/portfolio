@@ -23,7 +23,7 @@ export default function AppSectionWrapper({
           {sectionTitle}
         </h2>
       </div>
-      <div className="max-w-4xl">{children}</div>
+      <div className="max-w-6xl">{children}</div>
       <div className="">
         <AppNextSectionButton sectionId={nextSectionId ?? "welcome"} />
       </div>
