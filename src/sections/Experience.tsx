@@ -26,12 +26,11 @@ export default function Experience() {
             <p className="text-sm">Nov 2021 – Present</p>
             <p className="text-sm md:text-base mt-2">
               Building secure, accessible, and scalable web applications for the
-              largest private bank in Latin America, ensuring compliance and
-              exceptional user experiences.
+              largest private bank in Latin America.
             </p>
           </div>
         </div>
-        <div className="flex justify-between gap-8 items-center">
+        <div className="flex justify-start gap-8 items-center">
           {EXPERIENCES.map((project) => (
             <AppCard card={project} />
           ))}

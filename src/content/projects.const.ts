@@ -37,6 +37,6 @@ export const PROJECTS: ICard[] = [
       "Integrated relaxing music to create a focused learning environment.",
       "User-friendly design for seamless use in study sessions.",
     ],
-    technologies: ["HTML", "CSS", "JavaScript", "React"],
+    technologies: ["HTML", "CSS", "JavaScript", "React", "Vercel", "Vitest"],
   },
 ];
