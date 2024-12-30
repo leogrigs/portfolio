@@ -7,7 +7,7 @@ interface AppCardProps {
 
 export default function AppCard({ card }: AppCardProps) {
   return (
-    <div className="bg-background border border-border rounded-lg shadow-lg p-6 transition-transform hover:scale-105">
+    <div className="bg-background border border-border size-96 rounded-lg shadow-lg py-8 px-4 transition-transform hover:scale-105">
       {/* Card Title */}
       <h2 className="text-xl font-semibold text-foreground mb-3">
         <a href="#" className="no-underline hover:text-sky-400 after-line">
@@ -19,7 +19,7 @@ export default function AppCard({ card }: AppCardProps) {
       <p className="text-sm text-slate-400 mb-5">{card.cardSubtitle}</p>
 
       {/* Highlights List */}
-      <ul className="space-y-2 mb-5">
+      <ul className="space-y-2">
         {card.highlights.map((highlight) => (
           <li
             key={highlight}
