@@ -19,7 +19,7 @@ export default function AppSectionWrapper({
       className="min-h-screen flex flex-col py-8 ml-64 mr-8 justify-between transition-colors duration-300"
     >
       <div>
-        <h2 className="text-3xl mt-8 bg-gradient-to-r from-sky-400 to-slate-50 bg-clip-text text-transparent font-bold">
+        <h2 className="text-3xl mt-4 bg-gradient-to-r from-sky-400 to-slate-50 bg-clip-text text-transparent font-bold">
           {sectionTitle}
         </h2>
       </div>
