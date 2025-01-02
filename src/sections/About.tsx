@@ -6,6 +6,7 @@ export default function About() {
       sectionId="about"
       nextSectionId="experience"
       sectionTitle="About"
+      sectionNumber="02"
     >
       <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
         {/* Text Section */}
