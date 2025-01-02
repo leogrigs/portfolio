@@ -18,7 +18,7 @@ export default function Experience() {
                 href="https://www.nttdata.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 no-underline after-line"
+                className="text-fontColor no-underline after-line"
               >
                 @ NTT DATA
               </a>
