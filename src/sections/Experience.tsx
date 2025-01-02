@@ -7,6 +7,7 @@ export default function Experience() {
     <AppSectionWrapper
       sectionId="experience"
       sectionTitle="Experience"
+      sectionNumber="03"
       nextSectionId="projects"
     >
       <div className="flex flex-col justify-start bg-background">
@@ -24,7 +25,7 @@ export default function Experience() {
               </a>
             </h3>
             <p className="text-sm">Nov 2021 – Present</p>
-            <p className="text-sm md:text-base mt-2">
+            <p className="text-sm md:text-base mt-2 text-muted-foreground">
               Building secure, accessible, and scalable web applications for the
               largest private bank in Latin America.
             </p>
