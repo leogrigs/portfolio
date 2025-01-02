@@ -11,7 +11,11 @@ export default function AppCard({ card }: AppCardProps) {
       {/* Card Title */}
       <div>
         <h2 className="text-xl font-semibold text-foreground mb-3">
-          <a href="#" className="no-underline hover:text-sky-400 after-line">
+          <a
+            href={card.cardTitleLink}
+            target="_blank"
+            className="no-underline hover:text-sky-400 after-line"
+          >
             {card.cardTitle}
           </a>
         </h2>
