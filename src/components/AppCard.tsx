@@ -14,7 +14,7 @@ export default function AppCard({ card }: AppCardProps) {
           <a
             href={card.cardTitleLink}
             target="_blank"
-            className="no-underline hover:text-sky-400 after-line"
+            className="no-underline hover:text-fontColor after-line"
           >
             {card.cardTitle}
           </a>
@@ -30,7 +30,7 @@ export default function AppCard({ card }: AppCardProps) {
               key={highlight}
               className="flex items-center text-sm text-foreground"
             >
-              <Check className="text-sky-400 mr-2" size={16} />
+              <Check className="text-fontColor mr-2" size={16} />
               {highlight}
             </li>
           ))}

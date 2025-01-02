@@ -14,12 +14,12 @@ export function AppNavigationMenu() {
       <ul className="space-y-8 text-right">
         {links.map((link, index) => (
           <li key={link.href} className="flex">
-            <span className="text-sky-400 text-sm md:text-base w-8">{`0${
+            <span className="text-fontColor text-sm md:text-base w-8">{`0${
               index + 1
             }.`}</span>
             <a
               href={link.href}
-              className="hover:text-sky-400 no-underline after-line transition-colors duration-300 text-sm md:text-base pl-2"
+              className="hover:text-fontColor no-underline after-line transition-colors duration-300 text-sm md:text-base pl-2"
             >
               {link.text}
             </a>
