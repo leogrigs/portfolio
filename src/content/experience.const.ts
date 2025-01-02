@@ -2,7 +2,8 @@ import { ICard } from "@/interfaces/card.interface";
 
 export const EXPERIENCES: ICard[] = [
   {
-    cardTitle: "AWS Modernization Project",
+    cardTitle: "AWS Modernization",
+    cardTitleLink: "https://www.itau.com.br/",
     cardSubtitle: "NTT DATA – Itaú Unibanco",
     highlights: [
       "Achieved an 800% increase in agency map access within one year (400k users/month).",
@@ -22,7 +23,8 @@ export const EXPERIENCES: ICard[] = [
     ],
   },
   {
-    cardTitle: "Itaú Private Banking Application",
+    cardTitle: "Itaú Private Banking",
+    cardTitleLink: "https://www.itauprivatebank.com/",
     cardSubtitle: "NTT DATA – Itaú Unibanco",
     highlights: [
       "Enhanced platform for 5k high-net-worth clients with assets of $1.5M+.",
