@@ -7,6 +7,7 @@ export default function Experience() {
     <AppSectionWrapper
       sectionId="experience"
       sectionTitle="Experience"
+      sectionNumber="03"
       nextSectionId="projects"
     >
       <div className="flex flex-col justify-start bg-background">
