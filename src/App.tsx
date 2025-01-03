@@ -2,6 +2,7 @@ import "./App.css";
 import { AppNavigationMenu } from "./components/AppNavigationMenu";
 import { ThemeProvider } from "./providers/theme-provider";
 import About from "./sections/About";
+import Contact from "./sections/Contact";
 import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
 import Welcome from "./sections/Welcome";
@@ -15,6 +16,7 @@ function App() {
         <About />
         <Experience />
         <Projects />
+        <Contact />
       </main>
     </ThemeProvider>
   );

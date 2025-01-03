@@ -21,7 +21,9 @@ export default function AppCard({ card }: AppCardProps) {
         </h2>
 
         {/* Card Subtitle */}
-        <p className="text-sm text-slate-400 mb-5">{card.cardSubtitle}</p>
+        <p className="text-sm text-muted-foreground mb-5">
+          {card.cardSubtitle}
+        </p>
 
         {/* Highlights List */}
         <ul className="space-y-2">
