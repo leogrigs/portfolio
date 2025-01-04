@@ -12,7 +12,7 @@ export default function About() {
     >
       <div className="flex flex-col lg:flex-row items-start gap-32">
         {/* Text Section */}
-        <div className="lg:w-1/2 space-y-4 mb-8">
+        <div className="lg:w-1/2 space-y-4 mb-2">
           {ABOUT.map((paragraph, index) => (
             <AppBullet bulletText={paragraph} key={`bullet-${index}`} />
           ))}
