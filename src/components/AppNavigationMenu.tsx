@@ -1,5 +1,3 @@
-import { ThemeToggle } from "./ThemeToggle";
-
 const links = [
   { href: "#welcome", text: "Welcome" },
   { href: "#about", text: "About" },
@@ -26,9 +24,6 @@ export function AppNavigationMenu() {
           </li>
         ))}
       </ul>
-      <div className="mt-auto pr-4">
-        <ThemeToggle />
-      </div>
     </nav>
   );
 }
