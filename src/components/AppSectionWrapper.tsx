@@ -18,7 +18,7 @@ export default function AppSectionWrapper({
   return (
     <section
       id={sectionId}
-      className="min-h-screen flex flex-col py-8 ml-64 mr-8 justify-between transition-colors duration-300"
+      className="min-h-screen flex flex-col py-4 ml-64 mr-8 justify-between transition-colors duration-300"
     >
       <div>
         <h2 className="text-3xl mt-4 bg-gradient-to-r font-semibold">
