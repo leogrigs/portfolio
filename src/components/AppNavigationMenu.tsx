@@ -10,7 +10,7 @@ const links = [
 
 export function AppNavigationMenu() {
   return (
-    <nav className="fixed top-0 left-0 z-10 border-r border-border flex flex-col p-8 bg-transparent h-full">
+    <nav className="hidden md:fixed top-0 left-0 z-10 border-r border-border md:flex flex-col p-8 bg-transparent h-full">
       <ul className="space-y-8 text-right">
         {links.map((link, index) => (
           <li key={link.href} className="flex">
