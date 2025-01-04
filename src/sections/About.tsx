@@ -10,28 +10,34 @@ export default function About() {
       sectionTitle="About"
       sectionNumber="02"
     >
-      <div className="flex flex-col lg:flex-row items-start gap-32">
+      <div className="flex flex-col-reverse md:flex-row items-center md:items-start gap-8 md:gap-16 lg:gap-32">
         {/* Text Section */}
-        <div className="lg:w-1/2 space-y-4 mb-2">
+        <div className="w-full md:w-1/2 space-y-4">
           {ABOUT.map((paragraph, index) => (
             <AppBullet bulletText={paragraph} key={`bullet-${index}`} />
           ))}
         </div>
 
         {/* Image Section */}
-        <div className="w-40 md:w-56 lg:w-80 relative hover:scale-105 transition-transform duration-300 ">
+        <div className="relative w-32 sm:w-40 md:w-56 lg:w-64">
+          {/* Profile Image */}
           <img
-            className="rounded-full w-full h-auto object-cover border border-fontColor"
+            className="rounded-full w-full h-auto object-cover border border-fontColor shadow-lg"
             src="https://media.licdn.com/dms/image/v2/D4D03AQFwyDAhI0EPEA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1728589234021?e=1740614400&v=beta&t=y6wvt45X0d2oswFED4eAGuxFJQPcVRTcWZdN7toii1c"
             alt="Leonardo Grigorio Ferreira"
           />
+
+          {/* Badge */}
           <a
-            className="hover:scale-125 transition-transform duration-300 absolute bottom-0 right-8"
             href="https://www.credly.com/badges/08549e01-a715-4af4-9188-2f7cb18cf207"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-0 right-0 transform hover:scale-110 transition-transform duration-300"
           >
             <img
               src="https://miro.medium.com/v2/resize:fit:512/0*P7dmdm5OCZaMEPOG"
-              width="64"
+              alt="AWS Certification Badge"
+              className="w-12 sm:w-16 lg:w-20"
             />
           </a>
         </div>

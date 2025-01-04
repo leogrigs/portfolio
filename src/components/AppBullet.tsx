@@ -11,7 +11,7 @@ export default function AppBullet({ bulletText }: AppBulletProps) {
       <div>
         <ChevronRight size={18} className="text-fontColor mt-1" />
       </div>
-      <p className="text-md md:text-lg font-light text-muted-foreground [&>strong]:text-foreground">
+      <p className="text-sm md:text-lg font-light text-muted-foreground [&>strong]:text-foreground">
         {bulletText}
       </p>
     </div>
