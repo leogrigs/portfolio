@@ -14,7 +14,7 @@ export default function Experience() {
         <div className="w-full max-w-6xl">
           <div className="mb-8">
             <h3 className="text-xl font-semibold">
-              Front-End Software Engineer{" "}
+              Frontend Software Engineer{" "}
               <a
                 href="https://www.nttdata.com"
                 target="_blank"
@@ -24,10 +24,11 @@ export default function Experience() {
                 @ NTT DATA
               </a>
             </h3>
-            <p className="text-sm">Nov 2021 – Present</p>
-            <p className="text-sm md:text-base mt-2 text-muted-foreground">
-              Building secure, accessible, and scalable web applications for the
-              largest private bank in Latin America.
+            <p className="text-sm text-muted-foreground">Nov 2021 – Present</p>
+            <p className="text-sm md:text-base mt-4">
+              Providing consulting services to Itaú Unibanco, Latin America’s
+              largest private bank, specializing in scalable, secure, and
+              user-centric web solutions.
             </p>
           </div>
         </div>

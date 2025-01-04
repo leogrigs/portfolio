@@ -1,5 +1,6 @@
 import { ICard } from "@/interfaces/card.interface";
 import { Check } from "lucide-react";
+import { Badge } from "./ui/badge";
 
 interface AppCardProps {
   card: ICard;
@@ -28,11 +29,11 @@ export default function AppCard({ card }: AppCardProps) {
         {/* Highlights List */}
         <ul className="space-y-2">
           {card.highlights.map((highlight) => (
-            <li
-              key={highlight}
-              className="flex items-center text-sm text-foreground"
-            >
-              <Check className="text-fontColor mr-2" size={16} />
+            <li key={highlight} className="flex text-sm text-foreground">
+              <span>
+                <Check className="text-fontColor mr-2 mt-1" size={12} />
+              </span>
+
               {highlight}
             </li>
           ))}
@@ -43,12 +44,9 @@ export default function AppCard({ card }: AppCardProps) {
         {/* Technologies */}
         <div className="flex flex-wrap gap-2 mt-6">
           {card.technologies.map((technology) => (
-            <span
-              key={technology}
-              className="bg-muted text-muted-foreground text-xs font-medium px-3 py-1 rounded-full"
-            >
+            <Badge variant={"outline"} key={technology}>
               {technology}
-            </span>
+            </Badge>
           ))}
         </div>
       </div>

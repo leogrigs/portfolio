@@ -18,11 +18,11 @@ export default function Welcome() {
           Front-End Developer
         </h3>
         <p className="text-md md:text-lg font-light text-muted-foreground leading-relaxed mb-6">
-          I’m a dedicated Front-End Developer with over three years of
-          experience, specializing in Angular. I create intuitive, accessible,
-          and user-friendly web interfaces for diverse audiences while expanding
-          my expertise in React, AWS, and modern web technologies to deliver
-          innovative and scalable solutions.
+          Frontend Developer with 3+ years of experience in fnancial services
+          and consulting, specializing in agile solutions that enhance
+          engagement, accessibility, and effciency. Proven track record of
+          driving improvements, boosting metrics, and delivering high NPS scores
+          through modernized user experiences and collaborative workfows.
         </p>
       </div>
     </AppSectionWrapper>

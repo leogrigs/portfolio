@@ -3,12 +3,14 @@ import { ICard } from "@/interfaces/card.interface";
 export const PROJECTS: ICard[] = [
   {
     cardTitle: "Easy Cards",
-    cardSubtitle: "A Free Flashcard Application for Smarter Studying",
+    cardSubtitle:
+      "Enabled efficient learning with customizable flashcards and interactive features.",
     cardTitleLink: "https://easy-cards.vercel.app/",
     highlights: [
-      "Enabled efficient learning with customizable flashcards and interactive features.",
-      "Built with an intuitive interface to enhance user engagement and learning experience.",
-      "Completely free and accessible, empowering students and professionals to master material effortlessly.",
+      "Code Coverage 80%+.",
+      "Automated testing and deployment using GitHub Actions.",
+      "Deployed on Vercel.",
+      "Authentication using Google OAuth provider.",
     ],
     technologies: [
       "React",
@@ -22,24 +24,26 @@ export const PROJECTS: ICard[] = [
   },
   {
     cardTitle: "Easy Budget",
-    cardSubtitle: "Simplifying Personal Finance Management",
+    cardSubtitle:
+      "Streamlined expense tracking and budgeting with an intuitive interface.",
     cardTitleLink: "https://easy-budget-murex.vercel.app/",
     highlights: [
-      "Streamlined expense tracking and budgeting with an intuitive interface.",
-      "Developed a visually engaging platform to provide insights into spending habits.",
-      "Free, efficient, and accessible, designed to fill a gap in personal finance tools.",
+      "Code Coverage 80%+.",
+      "Automated testing and deployment using GitHub Actions.",
+      "Deployed on Vercel.",
+      "Authentication using Google OAuth provider.",
     ],
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Firebase"],
   },
   {
     cardTitle: "Easy Focus",
     cardTitleLink: "https://leogrigs.github.io/easy-focus/",
-    cardSubtitle: "Pomodoro Tracker for Focused Studying",
+    cardSubtitle: "Pomodoro Tracker for Focused Studying and Relaxation.",
     highlights: [
       "Boosted study productivity with a simple and effective Pomodoro tracker.",
       "Integrated relaxing music to create a focused learning environment.",
-      "User-friendly design for seamless use in study sessions.",
+      "Deployed on GitHub Pages.",
     ],
-    technologies: ["HTML", "CSS", "JavaScript", "React", "Vercel", "Vitest"],
+    technologies: ["HTML", "CSS", "JavaScript", "React", "GitHub Pages"],
   },
 ];
