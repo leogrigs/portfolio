@@ -18,19 +18,24 @@ export default function AppSectionWrapper({
   return (
     <section
       id={sectionId}
-      className="min-h-screen flex flex-col py-4 ml-64 mr-8 justify-between transition-colors duration-300"
+      className="min-h-screen flex flex-col justify-between py-8 px-6 md:ml-56 md:mr-8 lg:px-8 transition-colors duration-300"
     >
-      <div>
-        <h2 className="text-3xl mt-4 bg-gradient-to-r font-semibold">
-          <span className="text-2xl text-fontColor font-light">
+      {/* Section Header */}
+      <div className="mb-6">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
+          <span className="text-lg sm:text-xl lg:text-2xl text-fontColor font-light">
             {sectionNumber ? `${sectionNumber}. ` : ""}
           </span>
           {sectionTitle}
         </h2>
       </div>
-      <div className="max-w-6xl">{children}</div>
-      <div className="">
-        <AppNextSectionButton sectionId={nextSectionId ?? "welcome"} />
+
+      {/* Section Content */}
+      <div className="max-w-6xl mx-auto w-full">{children}</div>
+
+      {/* Next Section Button */}
+      <div className="mt-6 flex justify-center md:justify-end">
+        <AppNextSectionButton sectionId={nextSectionId} />
       </div>
     </section>
   );
