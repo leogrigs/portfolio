@@ -1,6 +1,6 @@
 module.exports = {
   branches: ["main"],
-  repositoryUrl: "https://github.com/leogrigs/easy-budget.git",
+  repositoryUrl: "https://github.com/leogrigs/portfolio.git",
   plugins: [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
