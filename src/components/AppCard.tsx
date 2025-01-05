@@ -8,13 +8,14 @@ interface AppCardProps {
 
 export default function AppCard({ card }: AppCardProps) {
   return (
-    <div className="bg-background flex flex-col justify-between border border-border h-96 w-full rounded-lg shadow-lg py-8 px-4 transition-transform hover:scale-105">
+    <div className="bg-background flex flex-col justify-between border border-border min-h-[210px] max-h-[420px] w-full rounded-lg shadow-lg p-4 transition-transform hover:scale-105">
       {/* Card Title */}
       <div>
-        <h2 className="text-xl font-semibold text-foreground mb-3">
+        <h2 className="text-lg md:text-xl font-semibold text-foreground mb-1">
           <a
             href={card.cardTitleLink}
             target="_blank"
+            rel="noopener noreferrer"
             className="no-underline hover:text-fontColor after-line"
           >
             {card.cardTitle}
@@ -22,7 +23,7 @@ export default function AppCard({ card }: AppCardProps) {
         </h2>
 
         {/* Card Subtitle */}
-        <p className="text-sm text-muted-foreground mb-5">
+        <p className="text-sm text-muted-foreground mb-4">
           {card.cardSubtitle}
         </p>
 
@@ -33,7 +34,6 @@ export default function AppCard({ card }: AppCardProps) {
               <span>
                 <Check className="text-fontColor mr-2 mt-1" size={12} />
               </span>
-
               {highlight}
             </li>
           ))}

@@ -11,7 +11,7 @@ export function ThemeToggle() {
       title="Toggle theme"
       aria-label="Toggle theme"
       variant="ghost"
-      className="rounded-full p-4"
+      className="bg-background rounded-full size-10 hover:text-fontColor"
     >
       {theme === "dark" ? <Sun /> : <Moon />}
     </Button>

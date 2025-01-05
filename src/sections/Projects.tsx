@@ -10,10 +10,14 @@ export default function Projects() {
       sectionId="projects"
       nextSectionId="contact"
     >
-      <h3 className="mb-8">Here are some of the projects I've worked on.</h3>
-      <div className="flex justify-between gap-8 items-center">
-        {PROJECTS.map((project) => (
-          <AppCard card={project} />
+      <h3 className="text-lg md:text-xl font-semibold mb-8">
+        Here are some of the projects I've worked on.
+      </h3>
+
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {PROJECTS.map((project, index) => (
+          <AppCard card={project} key={`project-${index}`} />
         ))}
       </div>
     </AppSectionWrapper>
