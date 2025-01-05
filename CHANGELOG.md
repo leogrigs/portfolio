@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/leogrigs/portfolio/compare/v1.0.0...v1.1.0) (2025-01-05)
+
+
+### Features
+
+* update favicon link to point to the new logo location ([2b7e42b](https://github.com/leogrigs/portfolio/commit/2b7e42b21d8c6738136563bbf2ebd90c3042ea03))
+
 # 1.0.0 (2025-01-05)
 
 
