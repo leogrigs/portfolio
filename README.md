@@ -12,7 +12,7 @@ Welcome to my portfolio! This project is a showcase of my professional journey, 
 
 ## Preview
 
-![Preview of Portfolio Interface](image.png)
+![Preview of Portfolio Interface](https://github.com/user-attachments/assets/b91fdbaf-0881-4d60-b084-a502bf1ed140)
 
 ## Author
 
