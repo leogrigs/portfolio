@@ -1,5 +1,6 @@
 import "./App.css";
 import { AppNavigationMenu } from "./components/AppNavigationMenu";
+import AppResumeButton from "./components/AppResumeButton";
 import { ThemeToggle } from "./components/ThemeToggle";
 import { ThemeProvider } from "./providers/theme-provider";
 import About from "./sections/About";
@@ -12,7 +13,8 @@ function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <main className="bg-background">
-        <div className="fixed top-0 right-0 z-10 p-6">
+        <div className="flex items-center gap-4 fixed top-0 right-0 z-10 p-6">
+          <AppResumeButton />
           <ThemeToggle />
         </div>
         <AppNavigationMenu />
