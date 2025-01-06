@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/leogrigs/portfolio/compare/v1.1.0...v1.2.0) (2025-01-06)
+
+
+### Features
+
+* add AppResumeButton component to display a resume link ([a64a867](https://github.com/leogrigs/portfolio/commit/a64a8673615e8ec1bd7b142c9d46343f42baad9b))
+
 # [1.1.0](https://github.com/leogrigs/portfolio/compare/v1.0.0...v1.1.0) (2025-01-05)
 
 
