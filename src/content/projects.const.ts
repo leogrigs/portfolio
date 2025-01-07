@@ -37,7 +37,7 @@ export const PROJECTS: ICard[] = [
   },
   {
     cardTitle: "Easy Focus",
-    cardTitleLink: "https://leogrigs.github.io/easy-focus/",
+    cardTitleLink: "https://easy-focus.vercel.app/",
     cardSubtitle: "Pomodoro Tracker for Focused Studying and Relaxation.",
     highlights: [
       "Boosted study productivity with a simple and effective Pomodoro tracker.",
