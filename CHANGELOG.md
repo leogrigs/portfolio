@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/leogrigs/portfolio/compare/v1.3.0...v1.4.0) (2025-01-09)
+
+
+### Features
+
+* refactor Welcome component to fetch and display structured welcome data from Contentful ([edb35af](https://github.com/leogrigs/portfolio/commit/edb35af0dd352dda3a227c9f59f39bcf2aad91dc))
+
 # [1.3.0](https://github.com/leogrigs/portfolio/compare/v1.2.0...v1.3.0) (2025-01-09)
 
 
