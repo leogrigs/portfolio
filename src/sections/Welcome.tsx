@@ -1,6 +1,19 @@
 import AppSectionWrapper from "@/components/AppSectionWrapper";
+import { client } from "@/contentful/contentful";
+import { useEffect, useState } from "react";
 
 export default function Welcome() {
+  const [description, setDescription] = useState("");
+
+  useEffect(() => {
+    client
+      .getEntries({ content_type: "portfolioWelcome", limit: 1 })
+      .then((response) => {
+        console.log(response);
+        setDescription(response.items[0].fields.paragraph as string);
+      });
+  }, []);
+
   return (
     <AppSectionWrapper sectionId="welcome" nextSectionId="about">
       <div className="flex flex-col justify-center">
@@ -18,9 +31,7 @@ export default function Welcome() {
           Front-End Developer
         </h3>
         <p className="text-sm md:text-lg font-light text-muted-foreground leading-relaxed mb-6">
-          Frontend Developer with 3+ years of experience in fnancial services
-          and consulting, specializing in agile solutions that enhance
-          engagement, accessibility, and effciency.
+          {description}
         </p>
       </div>
     </AppSectionWrapper>
