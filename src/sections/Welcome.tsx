@@ -1,6 +1,7 @@
 import AppSectionWrapper from "@/components/AppSectionWrapper";
-import { client } from "@/contentful/contentful";
-import { useEffect, useState } from "react";
+import { RootState } from "@/store/store";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 interface WelcomeData {
   introduction: string;
@@ -12,22 +13,10 @@ interface WelcomeData {
 
 export default function Welcome() {
   const [welcomeData, setWelcomeData] = useState<null | WelcomeData>(null);
-
-  useEffect(() => {
-    client
-      .getEntries({ content_type: "portfolioWelcome", limit: 1 })
-      .then((response) => {
-        console.log(response);
-        const fields = response.items[0].fields as unknown as WelcomeData;
-        setWelcomeData({
-          introduction: fields.introduction,
-          firstName: fields.firstName,
-          lastName: fields.lastName,
-          role: fields.role,
-          paragraph: fields.paragraph,
-        });
-      });
-  }, []);
+  const { data } = useSelector((state: RootState) => {
+    console.log(state);
+    return state.content;
+  });
 
   return (
     <AppSectionWrapper sectionId="welcome" nextSectionId="about">
