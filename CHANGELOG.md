@@ -1,3 +1,12 @@
+# [1.5.0](https://github.com/leogrigs/portfolio/compare/v1.4.0...v1.5.0) (2025-01-13)
+
+
+### Features
+
+* add fetchContentfulData function to retrieve entries from Contentful ([f6c20b6](https://github.com/leogrigs/portfolio/commit/f6c20b6567acd2021b004b9a024b2709a5fec9c1))
+* add Redux slice and store configuration for Contentful data management ([1b234b0](https://github.com/leogrigs/portfolio/commit/1b234b04f8e328e802445c738c4e553aac398320))
+* integrate Redux store and fetch data on App component mount ([978bf16](https://github.com/leogrigs/portfolio/commit/978bf1666d6ce409867b4d7cf7712f05dca5ba82))
+
 # [1.4.0](https://github.com/leogrigs/portfolio/compare/v1.3.0...v1.4.0) (2025-01-09)
 
 
