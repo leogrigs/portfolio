@@ -1,3 +1,4 @@
+import { ContentResponse } from "@/interfaces/content-response.interface";
 import * as contentful from "contentful";
 
 export const client = contentful.createClient({
@@ -15,7 +16,8 @@ export const fetchContentfulData = async (
       content_type: contentType,
       ...query,
     });
-    return response.items.map((item) => item.fields);
+    console.log(response);
+    return response.items[0].fields as unknown as ContentResponse;
   } catch (error) {
     console.error("Error fetching data from Contentful:", error);
     throw new Error("Failed to fetch data from Contentful.");
