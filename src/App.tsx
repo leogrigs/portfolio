@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import { AppNavigationMenu } from "./components/AppNavigationMenu";
 import AppResumeButton from "./components/AppResumeButton";
@@ -11,14 +11,17 @@ import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
 import Welcome from "./sections/Welcome";
 import { fetchData } from "./store/slices/contentSlice";
-import { AppDispatch } from "./store/store";
+import { AppDispatch, RootState } from "./store/store";
 
 function App() {
   const dispatch: AppDispatch = useDispatch();
+  const { data } = useSelector((state: RootState) => state.content);
 
   useEffect(() => {
-    dispatch(fetchData());
-  }, [dispatch]);
+    if (!data) {
+      dispatch(fetchData());
+    }
+  }, [dispatch, data]);
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
