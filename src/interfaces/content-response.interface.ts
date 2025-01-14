@@ -30,4 +30,5 @@ export interface ContentResponse {
     paragraph: string;
     projects: ICard[];
   };
+  resumeLink: string;
 }
