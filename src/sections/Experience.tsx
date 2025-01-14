@@ -1,8 +1,31 @@
 import AppCard from "@/components/AppCard";
 import AppSectionWrapper from "@/components/AppSectionWrapper";
-import { EXPERIENCES } from "@/content/experience.const";
+import { RootState } from "@/store/store";
+import { useSelector } from "react-redux";
 
 export default function Experience() {
+  const experienceData = useSelector((state: RootState) => {
+    if (!state.content.data) return null;
+    const _data = state.content.data.experience[0];
+    return {
+      company: _data.company,
+      role: _data.role,
+      period: _data.period,
+      description: _data.description,
+      experiences: _data.projects,
+    };
+  });
+
+  if (!experienceData) {
+    return (
+      <AppSectionWrapper sectionId="experience" nextSectionId="projects">
+        <div className="flex flex-col justify-center">
+          <p>Loading...</p>
+        </div>
+      </AppSectionWrapper>
+    );
+  }
+
   return (
     <AppSectionWrapper
       sectionId="experience"
@@ -15,28 +38,28 @@ export default function Experience() {
           {/* Experience Header */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold">
-              Frontend Software Engineer{" "}
+              {`${experienceData.role} `}
               <a
                 href="https://www.nttdata.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-fontColor no-underline after-line"
               >
-                @ NTT DATA
+                @ {experienceData.company}
               </a>
             </h3>
-            <p className="text-sm text-muted-foreground">Nov 2021 – Present</p>
+            <p className="text-sm text-muted-foreground">
+              {experienceData.period}
+            </p>
             <p className="text-sm md:text-base mt-4">
-              Providing consulting services to Itaú Unibanco, Latin America’s
-              largest private bank, specializing in scalable, secure, and
-              user-centric web solutions.
+              {experienceData.description}
             </p>
           </div>
         </div>
 
         {/* Projects */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {EXPERIENCES.map((project) => (
+          {experienceData.experiences.map((project) => (
             <AppCard card={project} key={project.cardTitle} />
           ))}
         </div>
