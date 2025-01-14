@@ -27,7 +27,7 @@ export interface ContentResponse {
     role: string;
   }[];
   projects: {
-    title: string;
-    cards: ICard[];
+    paragraph: string;
+    projects: ICard[];
   };
 }
