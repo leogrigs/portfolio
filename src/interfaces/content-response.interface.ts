@@ -19,8 +19,16 @@ export interface ContentResponse {
       };
     };
   };
+  experience: {
+    company: string;
+    description: string;
+    period: string;
+    projects: ICard[];
+    role: string;
+  }[];
   projects: {
-    title: string;
-    cards: ICard[];
+    paragraph: string;
+    projects: ICard[];
   };
+  resumeLink: string;
 }

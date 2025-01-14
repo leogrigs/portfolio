@@ -1,8 +1,28 @@
 import AppBullet from "@/components/AppBullet";
 import AppSectionWrapper from "@/components/AppSectionWrapper";
-import { ABOUT } from "@/content/about.const";
+import { RootState } from "@/store/store";
+import { useSelector } from "react-redux";
 
 export default function About() {
+  const aboutData = useSelector((state: RootState) => {
+    if (!state.content.data) return null;
+    const _data = state.content.data.about;
+    return {
+      bullets: _data.bullets,
+      image: state.content.data.profilePicture.fields.file.url,
+    };
+  });
+
+  if (!aboutData) {
+    return (
+      <AppSectionWrapper sectionId="about" nextSectionId="experience">
+        <div className="flex flex-col justify-center">
+          <p>Loading...</p>
+        </div>
+      </AppSectionWrapper>
+    );
+  }
+
   return (
     <AppSectionWrapper
       sectionId="about"
@@ -13,7 +33,7 @@ export default function About() {
       <div className="flex flex-col-reverse md:flex-row items-center md:items-start gap-8 md:gap-16 lg:gap-32">
         {/* Text Section */}
         <div className="w-full md:w-1/2 space-y-4">
-          {ABOUT.map((paragraph, index) => (
+          {aboutData.bullets.map((paragraph: string, index: number) => (
             <AppBullet bulletText={paragraph} key={`bullet-${index}`} />
           ))}
         </div>
@@ -23,7 +43,7 @@ export default function About() {
           {/* Profile Image */}
           <img
             className="rounded-full w-full h-auto object-cover border border-fontColor shadow-lg"
-            src="https://media.licdn.com/dms/image/v2/D4D03AQFwyDAhI0EPEA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1728589234021?e=1740614400&v=beta&t=y6wvt45X0d2oswFED4eAGuxFJQPcVRTcWZdN7toii1c"
+            src={aboutData.image}
             alt="Leonardo Grigorio Ferreira"
           />
 
