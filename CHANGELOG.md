@@ -1,3 +1,17 @@
+# [1.6.0](https://github.com/leogrigs/portfolio/compare/v1.5.0...v1.6.0) (2025-01-14)
+
+
+### Features
+
+* add DOMPurify for sanitizing bulletText in AppBullet component ([3e88e12](https://github.com/leogrigs/portfolio/commit/3e88e12b28f44ab55752d74761861aead4469ea9))
+* add resumeLink to ContentResponse interface ([0aa0aa5](https://github.com/leogrigs/portfolio/commit/0aa0aa51c6ba220b24ce2bc810df281485f2eedb))
+* extend ContentResponse interface to include experience details ([0cfe0d3](https://github.com/leogrigs/portfolio/commit/0cfe0d325054c5cfbeefbbc55fca182e7a8cc5cd))
+* fetch resume link from Redux store in AppResumeButton component ([ae97bb8](https://github.com/leogrigs/portfolio/commit/ae97bb8286bf00d424ac756a25dbfa16ded5e719))
+* implement data fetching for About section using useSelector ([ab4ac7e](https://github.com/leogrigs/portfolio/commit/ab4ac7e4bbb05239d58f92ba7ea6add3cea55bc8))
+* implement data fetching for projects section using useSelector ([319c178](https://github.com/leogrigs/portfolio/commit/319c178d36b074b0d464a9933a1f592b3d44a6b0))
+* implement experience data fetching and rendering in Experience component ([3f7e658](https://github.com/leogrigs/portfolio/commit/3f7e65800df826f0d1e46b452c8318c184d873c5))
+* update ContentResponse interface to change projects structure ([fdb5fdd](https://github.com/leogrigs/portfolio/commit/fdb5fdd713d29f04287288754d9a84aedc91a5b3))
+
 # [1.5.0](https://github.com/leogrigs/portfolio/compare/v1.4.0...v1.5.0) (2025-01-13)
 
 
