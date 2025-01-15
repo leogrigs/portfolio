@@ -9,12 +9,14 @@ export const client = contentful.createClient({
 
 export const fetchContentfulData = async (
   contentType: string,
-  query?: object
+  query?: object,
+  locale: string = "en-US"
 ) => {
   try {
     const response = await client.getEntries({
       content_type: contentType,
       ...query,
+      locale,
     });
     console.log(response);
     return response.items[0].fields as unknown as ContentResponse;
