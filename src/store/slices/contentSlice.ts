@@ -16,9 +16,8 @@ const initialState: ContentState = {
 
 export const fetchData = createAsyncThunk(
   "content/fetchData",
-  async (): Promise<ContentResponse> => {
-    const response = await fetchContentfulData("portfolio");
-    console.log(response);
+  async (locale: string): Promise<ContentResponse> => {
+    const response = await fetchContentfulData("portfolio", {}, locale);
     return response;
   }
 );

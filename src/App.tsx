@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
+import AppLanguageSelector from "./components/AppLanguageSelector";
 import AppLoader from "./components/AppLoader";
 import { AppNavigationMenu } from "./components/AppNavigationMenu";
 import AppResumeButton from "./components/AppResumeButton";
@@ -17,22 +18,20 @@ import { AppDispatch, RootState } from "./store/store";
 function App() {
   const dispatch: AppDispatch = useDispatch();
   const { data } = useSelector((state: RootState) => state.content);
+  const { currentLocale } = useSelector((state: RootState) => state.locale);
   const [isLoaderVisible, setIsLoaderVisible] = useState(true);
 
   useEffect(() => {
-    if (!data) {
-      dispatch(fetchData());
-    }
-  }, [dispatch, data]);
+    setIsLoaderVisible(true);
+    dispatch(fetchData(currentLocale));
+  }, [dispatch, currentLocale]);
 
   useEffect(() => {
     if (data) {
-      const timer = setTimeout(() => {
-        setIsLoaderVisible(false);
-      }, 2500);
+      const timer = setTimeout(() => setIsLoaderVisible(false), 2500);
       return () => clearTimeout(timer);
     }
-  }, [data]);
+  }, [isLoaderVisible, data]);
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -41,6 +40,7 @@ function App() {
       ) : (
         <main className="bg-background">
           <div className="flex items-center gap-4 fade-in fixed top-0 right-0 z-10 p-6">
+            <AppLanguageSelector />
             <AppResumeButton />
             <ThemeToggle />
           </div>
