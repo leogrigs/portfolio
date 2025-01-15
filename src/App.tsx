@@ -40,16 +40,18 @@ function App() {
         <AppLoader />
       ) : (
         <main className="bg-background">
-          <div className="flex items-center gap-4 fixed top-0 right-0 z-10 p-6">
+          <div className="flex items-center gap-4 fade-in fixed top-0 right-0 z-10 p-6">
             <AppResumeButton />
             <ThemeToggle />
           </div>
           <AppNavigationMenu />
-          <Welcome />
-          <About />
-          <Experience />
-          <Projects />
-          <Contact />
+          <div className="fade-in">
+            <Welcome />
+            <About />
+            <Experience />
+            <Projects />
+            <Contact />
+          </div>
         </main>
       )}
     </ThemeProvider>

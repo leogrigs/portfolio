@@ -8,8 +8,8 @@ const links = [
 
 export function AppNavigationMenu() {
   return (
-    <nav className="hidden md:fixed top-0 left-0 z-10 border-r border-border md:flex flex-col p-8 bg-transparent h-full">
-      <ul className="space-y-8 text-right">
+    <nav className="hidden md:fixed top-0 left-0 z-10 border-r border-border md:flex flex-col p-8 bg-transparent h-screen">
+      <ul className="space-y-8 text-right fade-in">
         {links.map((link, index) => (
           <li key={link.href} className="flex">
             <span className="text-fontColor text-sm md:text-base w-8">{`0${
