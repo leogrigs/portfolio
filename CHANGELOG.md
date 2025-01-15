@@ -1,3 +1,12 @@
+# [1.8.0](https://github.com/leogrigs/portfolio/compare/v1.7.0...v1.8.0) (2025-01-15)
+
+
+### Features
+
+* add AppLanguageSelector component for language selection ([7008a33](https://github.com/leogrigs/portfolio/commit/7008a33a88a3e10379f8fa1567354df9876b5f26))
+* add locale management with localeSlice and integrate locale into content fetching ([c148dc9](https://github.com/leogrigs/portfolio/commit/c148dc971ac69ca78f913d15550c7f77f42016b6))
+* integrate AppLanguageSelector and update data fetching with locale support ([65a548e](https://github.com/leogrigs/portfolio/commit/65a548ebbd9b98c7a827727225db28a43593fec1))
+
 # [1.7.0](https://github.com/leogrigs/portfolio/compare/v1.6.0...v1.7.0) (2025-01-15)
 
 
