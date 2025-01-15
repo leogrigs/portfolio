@@ -1,3 +1,12 @@
+# [1.7.0](https://github.com/leogrigs/portfolio/compare/v1.6.0...v1.7.0) (2025-01-15)
+
+
+### Features
+
+* add AppLoader component with loading animation and welcome message ([26f92ed](https://github.com/leogrigs/portfolio/commit/26f92ed92a7ae754b7521936fdc0efa35a87ba18))
+* add fade-in animation to main content and navigation menu ([0d7edbf](https://github.com/leogrigs/portfolio/commit/0d7edbf8c7aced4501900c834b91b29945d6a4c0))
+* integrate AppLoader for improved loading experience ([feaebe7](https://github.com/leogrigs/portfolio/commit/feaebe733c6a9db57afaf7bff80dfe650e8a2b20))
+
 # [1.6.0](https://github.com/leogrigs/portfolio/compare/v1.5.0...v1.6.0) (2025-01-14)
 
 
