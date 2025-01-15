@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import contentReducer from "./slices/contentSlice";
+import localeReducer from "./slices/localeSlice";
 
 const store = configureStore({
   reducer: {
     content: contentReducer,
+    locale: localeReducer,
   },
 });
 
