@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/leogrigs/portfolio/compare/v1.9.0...v1.10.0) (2025-01-17)
+
+
+### Features
+
+* add analytics from @vercel/analytics ([edce25f](https://github.com/leogrigs/portfolio/commit/edce25f1d4f2e386c12a54b5d78fad96f8993caa))
+
 # [1.9.0](https://github.com/leogrigs/portfolio/compare/v1.8.0...v1.9.0) (2025-01-17)
 
 
