@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
@@ -54,6 +55,7 @@ function App() {
           </div>
         </main>
       )}
+      <Analytics />
     </ThemeProvider>
   );
 }
