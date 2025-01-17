@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/leogrigs/portfolio/compare/v1.8.0...v1.9.0) (2025-01-17)
+
+
+### Features
+
+* enhance AppLoader styling for improved responsiveness and visual appeal ([62589df](https://github.com/leogrigs/portfolio/commit/62589dff88dd0daa98559462eb41009e979ddb88))
+
 # [1.8.0](https://github.com/leogrigs/portfolio/compare/v1.7.0...v1.8.0) (2025-01-15)
 
 
