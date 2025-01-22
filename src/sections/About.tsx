@@ -10,6 +10,7 @@ export default function About() {
     return {
       bullets: _data.bullets,
       image: state.content.data.profilePicture.fields.file.url,
+      sectionTitle: state.content.data.others.sections.about,
     };
   });
 
@@ -27,7 +28,7 @@ export default function About() {
     <AppSectionWrapper
       sectionId="about"
       nextSectionId="experience"
-      sectionTitle="About"
+      sectionTitle={aboutData.sectionTitle ?? "About"}
       sectionNumber="02"
     >
       <div className="flex flex-col-reverse md:flex-row items-center md:items-start gap-8 md:gap-16 lg:gap-32">
