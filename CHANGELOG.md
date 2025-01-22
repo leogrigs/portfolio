@@ -1,3 +1,14 @@
+# [1.11.0](https://github.com/leogrigs/portfolio/compare/v1.10.0...v1.11.0) (2025-01-22)
+
+
+### Features
+
+* extend ContentResponse interface to include additional properties for others ([aa03347](https://github.com/leogrigs/portfolio/commit/aa0334771ace6b9578e3771391792e9d0939a522))
+* update About section to use dynamic section title from state ([88c5004](https://github.com/leogrigs/portfolio/commit/88c50044126f9c73ccfb516c5a66d4ab03274959))
+* update AppNavigationMenu to use links from Redux store ([4de3861](https://github.com/leogrigs/portfolio/commit/4de38614f3a5c5bdd1356270560a142ff796c585))
+* update Experience section to use dynamic section title from state ([0fc9ade](https://github.com/leogrigs/portfolio/commit/0fc9adec583268faed6d5722ae2f2826264ed0d0))
+* update Projects section to use dynamic section title from state ([9574d2c](https://github.com/leogrigs/portfolio/commit/9574d2c047005fd3b604ea9c0776069131426b84))
+
 # [1.10.0](https://github.com/leogrigs/portfolio/compare/v1.9.0...v1.10.0) (2025-01-17)
 
 
