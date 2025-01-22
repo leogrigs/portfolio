@@ -1,16 +1,15 @@
-const links = [
-  { href: "#welcome", text: "Welcome" },
-  { href: "#about", text: "About" },
-  { href: "#experience", text: "Experience" },
-  { href: "#projects", text: "Projects" },
-  { href: "#contact", text: "Contact" },
-];
+import { RootState } from "@/store/store";
+import { useSelector } from "react-redux";
 
 export function AppNavigationMenu() {
+  const links = useSelector(
+    (state: RootState) => state.content.data?.others.links
+  );
+
   return (
     <nav className="hidden md:fixed top-0 left-0 z-10 border-r border-border md:flex flex-col p-8 bg-transparent h-screen">
       <ul className="space-y-8 text-right fade-in">
-        {links.map((link, index) => (
+        {links?.map((link, index) => (
           <li key={link.href} className="flex">
             <span className="text-fontColor text-sm md:text-base w-8">{`0${
               index + 1

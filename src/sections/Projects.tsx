@@ -9,6 +9,7 @@ export default function Projects() {
     return {
       paragraph: state.content.data.projects.paragraph,
       projects: state.content.data.projects.projects,
+      sectionTitle: state.content.data.others.sections.about,
     };
   });
 
@@ -24,7 +25,7 @@ export default function Projects() {
 
   return (
     <AppSectionWrapper
-      sectionTitle="Projects"
+      sectionTitle={projectsData.sectionTitle ?? "Projects"}
       sectionNumber="04"
       sectionId="projects"
       nextSectionId="contact"
