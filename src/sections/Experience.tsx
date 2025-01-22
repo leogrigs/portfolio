@@ -13,6 +13,7 @@ export default function Experience() {
       period: _data.period,
       description: _data.description,
       experiences: _data.projects,
+      sectionTitle: state.content.data.others.sections.experience,
     };
   });
 
@@ -29,7 +30,7 @@ export default function Experience() {
   return (
     <AppSectionWrapper
       sectionId="experience"
-      sectionTitle="Experience"
+      sectionTitle={experienceData.sectionTitle ?? "Experience"}
       sectionNumber="03"
       nextSectionId="projects"
     >
