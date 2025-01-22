@@ -31,4 +31,12 @@ export interface ContentResponse {
     projects: ICard[];
   };
   resumeLink: string;
+  others: {
+    resumeButton: string;
+    links: { href: string; text: string }[];
+    sections: {
+      [key: string]: string;
+    };
+    loaderMessage: string;
+  };
 }
