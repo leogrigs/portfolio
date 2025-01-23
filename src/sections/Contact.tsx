@@ -5,23 +5,12 @@ import { useSelector } from "react-redux";
 
 export default function Contact() {
   const contactData = useSelector((state: RootState) => {
-    if (!state.content.data) return null;
     return {
-      sectionTitle: state.content.data.others.sections.contact,
-      sectionSubtitle: state.content.data.others.contact.title,
-      sectionParagraph: state.content.data.others.contact.paragraph,
+      sectionTitle: state.content.data?.others.sections.contact,
+      sectionSubtitle: state.content.data?.others.contact.title,
+      sectionParagraph: state.content.data?.others.contact.paragraph,
     };
   });
-
-  if (!contactData) {
-    return (
-      <AppSectionWrapper sectionId="about" nextSectionId="experience">
-        <div className="flex flex-col justify-center">
-          <p>Loading...</p>
-        </div>
-      </AppSectionWrapper>
-    );
-  }
 
   return (
     <AppSectionWrapper
