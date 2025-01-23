@@ -4,26 +4,15 @@ import { useSelector } from "react-redux";
 
 export default function Welcome() {
   const welcomeData = useSelector((state: RootState) => {
-    if (!state.content.data) return null;
-    const _data = state.content.data.welcome;
+    const _data = state.content.data?.welcome;
     return {
-      introduction: _data.introduction,
-      firstName: _data.firstName,
-      lastName: _data.lastName,
-      role: _data.role,
-      paragraph: _data.paragraph,
+      introduction: _data?.introduction,
+      firstName: _data?.firstName,
+      lastName: _data?.lastName,
+      role: _data?.role,
+      paragraph: _data?.paragraph,
     };
   });
-
-  if (!welcomeData) {
-    return (
-      <AppSectionWrapper sectionId="welcome" nextSectionId="about">
-        <div className="flex flex-col justify-center">
-          <p>Loading...</p>
-        </div>
-      </AppSectionWrapper>
-    );
-  }
 
   return (
     <AppSectionWrapper sectionId="welcome" nextSectionId="about">
