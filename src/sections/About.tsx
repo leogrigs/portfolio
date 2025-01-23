@@ -5,24 +5,13 @@ import { useSelector } from "react-redux";
 
 export default function About() {
   const aboutData = useSelector((state: RootState) => {
-    if (!state.content.data) return null;
-    const _data = state.content.data.about;
+    const _data = state.content.data?.about;
     return {
-      bullets: _data.bullets,
-      image: state.content.data.profilePicture.fields.file.url,
-      sectionTitle: state.content.data.others.sections.about,
+      bullets: _data?.bullets,
+      image: state.content.data?.profilePicture.fields.file.url,
+      sectionTitle: state.content.data?.others.sections.about,
     };
   });
-
-  if (!aboutData) {
-    return (
-      <AppSectionWrapper sectionId="about" nextSectionId="experience">
-        <div className="flex flex-col justify-center">
-          <p>Loading...</p>
-        </div>
-      </AppSectionWrapper>
-    );
-  }
 
   return (
     <AppSectionWrapper
@@ -34,7 +23,7 @@ export default function About() {
       <div className="flex flex-col-reverse md:flex-row items-center md:items-start gap-8 md:gap-16 lg:gap-32">
         {/* Text Section */}
         <div className="w-full md:w-1/2 space-y-4">
-          {aboutData.bullets.map((paragraph: string, index: number) => (
+          {aboutData.bullets?.map((paragraph: string, index: number) => (
             <AppBullet bulletText={paragraph} key={`bullet-${index}`} />
           ))}
         </div>
