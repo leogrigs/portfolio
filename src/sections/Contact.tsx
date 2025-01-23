@@ -1,18 +1,27 @@
 import AppSectionWrapper from "@/components/AppSectionWrapper";
 import { CONTACTS } from "@/content/contact.const";
+import { RootState } from "@/store/store";
+import { useSelector } from "react-redux";
 
 export default function Contact() {
+  const contactData = useSelector((state: RootState) => {
+    return {
+      sectionTitle: state.content.data?.others.sections.contact,
+      sectionSubtitle: state.content.data?.others.contact.title,
+      sectionParagraph: state.content.data?.others.contact.paragraph,
+    };
+  });
+
   return (
     <AppSectionWrapper
       sectionId="contact"
       sectionNumber="05"
-      sectionTitle="Contact"
+      sectionTitle={contactData.sectionSubtitle}
     >
       <div className="w-full flex flex-col items-center text-center">
-        <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
+        <h2 className="text-3xl font-bold mb-6">{contactData.sectionTitle}</h2>
         <p className="text-lg text-muted-foreground mb-8 max-w-xl">
-          Whether you have a question or just want to say hi, feel free to reach
-          out to me through any of the platforms below.
+          {contactData.sectionParagraph}
         </p>
         <div className="flex flex-wrap justify-center gap-8 w-full">
           {CONTACTS.map((link, index) => (

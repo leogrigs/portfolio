@@ -5,27 +5,16 @@ import { useSelector } from "react-redux";
 
 export default function Experience() {
   const experienceData = useSelector((state: RootState) => {
-    if (!state.content.data) return null;
-    const _data = state.content.data.experience[0];
+    const _data = state.content.data?.experience[0];
     return {
-      company: _data.company,
-      role: _data.role,
-      period: _data.period,
-      description: _data.description,
-      experiences: _data.projects,
-      sectionTitle: state.content.data.others.sections.experience,
+      company: _data?.company,
+      role: _data?.role,
+      period: _data?.period,
+      description: _data?.description,
+      experiences: _data?.projects,
+      sectionTitle: state.content.data?.others.sections.experience,
     };
   });
-
-  if (!experienceData) {
-    return (
-      <AppSectionWrapper sectionId="experience" nextSectionId="projects">
-        <div className="flex flex-col justify-center">
-          <p>Loading...</p>
-        </div>
-      </AppSectionWrapper>
-    );
-  }
 
   return (
     <AppSectionWrapper
@@ -60,7 +49,7 @@ export default function Experience() {
 
         {/* Projects */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {experienceData.experiences.map((project) => (
+          {experienceData.experiences?.map((project) => (
             <AppCard card={project} key={project.cardTitle} />
           ))}
         </div>
