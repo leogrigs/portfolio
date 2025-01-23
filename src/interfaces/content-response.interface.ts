@@ -38,5 +38,9 @@ export interface ContentResponse {
       [key: string]: string;
     };
     loaderMessage: string;
+    contact: {
+      title: string;
+      paragraph: string;
+    };
   };
 }
