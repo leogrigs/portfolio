@@ -1,3 +1,16 @@
+# [1.12.0](https://github.com/leogrigs/portfolio/compare/v1.11.0...v1.12.0) (2025-01-23)
+
+
+### Features
+
+* enhance About section to handle optional chaining for data retrieval ([6783b44](https://github.com/leogrigs/portfolio/commit/6783b44da4ef565b71175d6c018f0482b2bd2ba8))
+* refactor Welcome section to use optional chaining for data retrieval ([d69b15a](https://github.com/leogrigs/portfolio/commit/d69b15a59ce5ee26886f2d1782c0519aa763e111))
+* update AppLoader to display dynamic loader message from Redux store ([285120c](https://github.com/leogrigs/portfolio/commit/285120ce71e885d0e5750ea207cc60594a7000d8))
+* update Contact section to use dynamic content from Redux store ([80c492d](https://github.com/leogrigs/portfolio/commit/80c492d1adfb3f9c66c3fbaa775f820a02aea03a))
+* update Contact section to use optional chaining for data retrieval ([2ce33ac](https://github.com/leogrigs/portfolio/commit/2ce33ac239e26095c16abd97db31c8c57bec0113))
+* update Experience section to use optional chaining for data retrieval ([b25df2d](https://github.com/leogrigs/portfolio/commit/b25df2d1d58ab34e94bc7f5e39a77c6c82a791e6))
+* update Projects section to use optional chaining for data retrieval ([3bc22ce](https://github.com/leogrigs/portfolio/commit/3bc22ceaf6bc4d8a78365d7013346cf404875f83))
+
 # [1.11.0](https://github.com/leogrigs/portfolio/compare/v1.10.0...v1.11.0) (2025-01-22)
 
 
