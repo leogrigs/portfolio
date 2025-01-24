@@ -1,3 +1,11 @@
+# [1.13.0](https://github.com/leogrigs/portfolio/compare/v1.12.0...v1.13.0) (2025-01-24)
+
+
+### Features
+
+* enhance AppResumeButton with download icon and improved styling ([39b9754](https://github.com/leogrigs/portfolio/commit/39b9754401a35176279bd78c0a234d1d9994a920))
+* redesign AppLanguageSelector component for improved styling and user interaction ([e2ce1e7](https://github.com/leogrigs/portfolio/commit/e2ce1e764d7847e6a2fe53cd2f5efa37079dba4d))
+
 # [1.12.0](https://github.com/leogrigs/portfolio/compare/v1.11.0...v1.12.0) (2025-01-23)
 
 
