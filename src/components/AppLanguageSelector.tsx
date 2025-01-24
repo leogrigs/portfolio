@@ -22,16 +22,23 @@ export default function AppLanguageSelector() {
   };
 
   return (
-    <div className="flex items-center space-x-2">
-      <Select defaultValue={currentLocale} onValueChange={handleLanguageChange}>
-        <SelectTrigger className="w-[120px]">
-          <SelectValue />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="en-US">English</SelectItem>
-          <SelectItem value="pt-BR">Português</SelectItem>
-        </SelectContent>
-      </Select>
+    <div className="relative inline-flex items-center group">
+      {/* Language Selector */}
+      <div className="relative z-10 flex items-center space-x-2 px-4 py-2 border-0 rounded-lg text-foreground hover:scale-[1.03] transition-all duration-300 group-hover:bg-opacity-95 group-focus:ring-2 group-focus:ring-offset-2 group-focus:ring-borderColor">
+        {/* Globe Icon */}
+        <Select
+          defaultValue={currentLocale}
+          onValueChange={handleLanguageChange}
+        >
+          <SelectTrigger className="w-[120px] bg-background hover:text-fontColor">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="en-US">English</SelectItem>
+            <SelectItem value="pt-BR">Português</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
     </div>
   );
 }
