@@ -23,7 +23,7 @@ export default function Experience() {
       sectionNumber="03"
       nextSectionId="projects"
     >
-      <div className="flex flex-col bg-background">
+      <div className="flex flex-col">
         <div className="w-full max-w-6xl">
           {/* Experience Header */}
           <div className="mb-8">
