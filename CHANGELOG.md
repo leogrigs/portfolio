@@ -1,3 +1,12 @@
+# [1.14.0](https://github.com/leogrigs/portfolio/compare/v1.13.0...v1.14.0) (2025-01-25)
+
+
+### Features
+
+* adjust padding in AppResumeButton for improved layout ([fd971b5](https://github.com/leogrigs/portfolio/commit/fd971b50030cb2b05eb104af05fbef3239a3bf61))
+* remove background class from AppCard for improved styling ([e9369f2](https://github.com/leogrigs/portfolio/commit/e9369f25467a59846c2fe8879c5c23636b063373))
+* remove background class from Experience section for improved styling ([3c91a2d](https://github.com/leogrigs/portfolio/commit/3c91a2da0532b87f3b8f5f246628dc9f45dc673e))
+
 # [1.13.0](https://github.com/leogrigs/portfolio/compare/v1.12.0...v1.13.0) (2025-01-24)
 
 
