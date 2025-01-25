@@ -8,7 +8,7 @@ interface AppCardProps {
 
 export default function AppCard({ card }: AppCardProps) {
   return (
-    <div className="bg-background flex flex-col justify-between border border-border min-h-[210px] max-h-[420px] w-full rounded-lg shadow-lg p-4 transition-transform hover:scale-105">
+    <div className="flex flex-col justify-between border border-border min-h-[210px] max-h-[420px] w-full rounded-lg shadow-lg p-4 transition-transform hover:scale-105">
       {/* Card Title */}
       <div>
         <h2 className="text-lg md:text-xl font-semibold text-foreground mb-1">
