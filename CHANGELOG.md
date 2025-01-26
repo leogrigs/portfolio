@@ -1,3 +1,13 @@
+# [1.15.0](https://github.com/leogrigs/portfolio/compare/v1.14.0...v1.15.0) (2025-01-26)
+
+
+### Features
+
+* adjust AppLanguageSelector styles for improved layout and accessibility ([6a3473a](https://github.com/leogrigs/portfolio/commit/6a3473a3453c1cb841a3e7c68ff7a68e9011a8e6))
+* remove unused components from App for improved clarity and performance ([ae14ff1](https://github.com/leogrigs/portfolio/commit/ae14ff1422dc2e7d0fb2e2f051d2bf8aa10e9df3))
+* update AppNavigationMenu with improved layout and utility buttons ([d124475](https://github.com/leogrigs/portfolio/commit/d1244752268a5614b2c478c86b59a93550f1d469))
+* update AppSectionWrapper styles for improved layout and spacing ([31dab83](https://github.com/leogrigs/portfolio/commit/31dab83b0b17f12c90d45490c887c4cc2b95280b))
+
 # [1.14.0](https://github.com/leogrigs/portfolio/compare/v1.13.0...v1.14.0) (2025-01-25)
 
 
