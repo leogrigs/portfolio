@@ -18,7 +18,7 @@ export default function AppSectionWrapper({
   return (
     <section
       id={sectionId}
-      className="min-h-screen flex flex-col justify-between py-8 px-6 md:ml-56 md:mr-8 lg:px-8 transition-colors duration-300"
+      className="min-h-screen flex flex-col justify-between px-6 pt-24 pb-6 mx-auto w-full max-w-6xl transition-colors duration-300"
     >
       {/* Section Header */}
       <div className="mb-6">
@@ -31,7 +31,7 @@ export default function AppSectionWrapper({
       </div>
 
       {/* Section Content */}
-      <div className="max-w-6xl mx-auto w-full">{children}</div>
+      <div className="max-w-6xl">{children}</div>
 
       {/* Next Section Button */}
       <div className="mt-6 flex justify-center md:justify-end">
