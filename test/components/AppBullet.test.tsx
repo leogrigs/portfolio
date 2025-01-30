@@ -1,8 +1,6 @@
+import AppBullet from "@/components/AppBullet";
 import { render, screen } from "@testing-library/react";
 import DOMPurify from "dompurify";
-import React from "react";
-import { describe, expect, it, vi } from "vitest";
-import AppBullet from "../../src/components/AppBullet";
 
 vi.mock("dompurify", () => ({
   default: { sanitize: vi.fn((text) => text) },
