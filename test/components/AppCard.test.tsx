@@ -1,8 +1,6 @@
+import AppCard from "@/components/AppCard";
+import { ICard } from "@/interfaces/card.interface";
 import { render, screen } from "@testing-library/react";
-import React from "react";
-import { describe, expect, it } from "vitest";
-import AppCard from "../../src/components/AppCard";
-import { ICard } from "../../src/interfaces/card.interface";
 
 const mockCard: ICard = {
   cardTitle: "Test Card",

@@ -1,9 +1,7 @@
+import AppLoader from "@/components/AppLoader";
 import { render, screen } from "@testing-library/react";
-import React from "react";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
-import { describe, expect, it } from "vitest";
-import AppLoader from "../../src/components/AppLoader";
 
 const mockStore = configureMockStore([]);
 
