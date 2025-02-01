@@ -2,7 +2,7 @@
 
 ![License: MIT](https://img.shields.io/badge/license-MIT-green.svg) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/leogrigs/portfolio)
 
-Welcome to my portfolio! This project is a showcase of my professional journey, skills, and projects. It's built to provide a clear, intuitive experience for users to explore my work and learn more about me.
+Welcome to my portfolio! This project is a showcase of my professional journey, skills, and projects. It's built to provide a clear and intuitive experience for users to explore my work and learn more about me.
 
 ## Technologies
 
