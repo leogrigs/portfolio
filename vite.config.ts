@@ -12,7 +12,7 @@ export default defineConfig({
     css: false,
     coverage: {
       provider: "v8",
-      reporter: ["text", "html"],
+      reporter: ["text", "json", "html", "json-summary"],
       exclude: [
         "*.{js,cjs}",
         "*config.ts",
