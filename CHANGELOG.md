@@ -1,3 +1,11 @@
+# [1.16.0](https://github.com/leogrigs/portfolio/compare/v1.15.0...v1.16.0) (2025-02-05)
+
+
+### Features
+
+* add testing dependencies and scripts for improved test coverage ([6425d5f](https://github.com/leogrigs/portfolio/commit/6425d5f6ed7a4c9206435f58229a2ec9c9218ff7))
+* configure Vitest for testing with setup file and coverage reporting ([ee2967b](https://github.com/leogrigs/portfolio/commit/ee2967b4579df5a443051722d0d28190cdc23720))
+
 # [1.15.0](https://github.com/leogrigs/portfolio/compare/v1.14.0...v1.15.0) (2025-01-26)
 
 
