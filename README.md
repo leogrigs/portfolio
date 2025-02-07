@@ -9,7 +9,9 @@ Welcome to my portfolio! This project is a showcase of my professional journey, 
 
 - ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&style=flat)
 - ![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?logo=typescript&logoColor=white&style=flat)
+- ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white&style=flat)
 - ![Vite](https://img.shields.io/badge/-Vite-646CFF?logo=vite&logoColor=white&style=flat)
+- ![Vitest](https://img.shields.io/badge/Vitest-%236E9F18?style=for-the-badge&logo=Vitest&logoColor=%23fcd703&style=flat)
 
 ## Preview
 
