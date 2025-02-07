@@ -1,3 +1,15 @@
+# [1.17.0](https://github.com/leogrigs/portfolio/compare/v1.16.0...v1.17.0) (2025-02-07)
+
+
+### Bug Fixes
+
+* update ESLint configuration to ignore coverage directory and improve formatting ([3ae767f](https://github.com/leogrigs/portfolio/commit/3ae767f45f396cae47a333c574c57e2209f4b79b))
+
+
+### Features
+
+* add ContentState interface and refactor contentSlice to use it ([03dddf2](https://github.com/leogrigs/portfolio/commit/03dddf2d9b9c312f794560ad4ddfd344566f5264))
+
 # [1.16.0](https://github.com/leogrigs/portfolio/compare/v1.15.0...v1.16.0) (2025-02-05)
 
 
