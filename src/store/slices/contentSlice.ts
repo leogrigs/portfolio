@@ -1,12 +1,7 @@
 import { fetchContentfulData } from "@/contentful/contentful";
 import { ContentResponse } from "@/interfaces/content-response.interface";
+import { ContentState } from "@/interfaces/content-state.interface";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
-interface ContentState {
-  data: ContentResponse | null;
-  loading: boolean;
-  error: string | null;
-}
 
 const initialState: ContentState = {
   data: null,
