@@ -1,10 +1,27 @@
 export const PORTUGUESE = {
   navbar: {
-    home: "Início",
-    about: "Sobre",
-    experience: "Experiência",
-    projects: "Projetos",
-    contact: "Contato",
+    menu: [
+      {
+        label: "Início",
+        id: "home",
+      },
+      {
+        label: "Sobre",
+        id: "about",
+      },
+      {
+        label: "Experiência",
+        id: "experience",
+      },
+      {
+        label: "Projetos",
+        id: "projects",
+      },
+      {
+        label: "Contato",
+        id: "contact",
+      },
+    ],
     resume: "Currículo",
     language: {
       english: "Inglês",
