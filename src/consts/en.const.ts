@@ -2,11 +2,28 @@ import { PortfolioContent } from "@/interfaces/portfolio-content.interface";
 
 export const ENGLISH: PortfolioContent = {
   navbar: {
-    home: "Home",
-    about: "About",
-    experience: "Experience",
-    projects: "Projects",
-    contact: "Contact",
+    menu: [
+      {
+        label: "Home",
+        id: "home",
+      },
+      {
+        label: "About",
+        id: "about",
+      },
+      {
+        label: "Experience",
+        id: "experience",
+      },
+      {
+        label: "Projects",
+        id: "projects",
+      },
+      {
+        label: "Contact",
+        id: "contact",
+      },
+    ],
     resume: "Resume",
     language: {
       english: "English",
