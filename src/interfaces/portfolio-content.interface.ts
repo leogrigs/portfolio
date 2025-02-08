@@ -10,13 +10,14 @@ export interface PortfolioContent {
 }
 
 export interface Navbar {
-  home: string;
-  about: string;
-  experience: string;
-  projects: string;
-  contact: string;
+  menu: Menu[];
   resume: string;
   language: Language;
+}
+
+export interface Menu {
+  label: string;
+  id: string;
 }
 
 export interface Language {
