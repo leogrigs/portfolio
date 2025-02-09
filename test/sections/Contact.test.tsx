@@ -1,4 +1,4 @@
-import { CONTACTS } from "@/content/contact.const";
+import { CONTACTS } from "@/consts/contact.const";
 import Contact from "@/sections/Contact";
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
