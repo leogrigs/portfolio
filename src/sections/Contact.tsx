@@ -1,5 +1,5 @@
 import AppSectionWrapper from "@/components/AppSectionWrapper";
-import { CONTACTS } from "@/content/contact.const";
+import { CONTACTS } from "@/consts/contact.const";
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
 
