@@ -5,8 +5,8 @@ export interface PortfolioContent {
   experience: Experience;
   projects: Projects;
   contact: Contact;
-  madeBy: string;
   links: Links;
+  footer: Footer;
 }
 
 export interface Navbar {
@@ -16,6 +16,10 @@ export interface Navbar {
   projects: string;
   contact: string;
   resume: string;
+  language: Language;
+}
+
+export interface Language {
   english: string;
   portuguese: string;
 }
@@ -33,8 +37,8 @@ export interface BulletList {
 export interface About {
   title: string;
   featured: BulletList;
-  mainTechnologies: BulletList;
-  pictureUrl: string;
+  main_technologies: BulletList;
+  picture_url: string;
 }
 
 export interface ExperienceEntry {
@@ -63,7 +67,7 @@ export interface Projects {
 }
 
 export interface Contact {
-  getInTouch: string;
+  title: string;
   email: string;
   linkedin: string;
   github: string;
@@ -74,4 +78,8 @@ export interface Links {
   github: string;
   linkedin: string;
   email: string;
+}
+
+export interface Footer {
+  made_by: string;
 }
