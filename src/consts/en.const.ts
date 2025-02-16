@@ -1,4 +1,6 @@
-export const ENGLISH = {
+import { PortfolioContent } from "@/interfaces/portfolio-content.interface";
+
+export const ENGLISH: PortfolioContent = {
   navbar: {
     home: "Home",
     about: "About",
@@ -18,8 +20,6 @@ export const ENGLISH = {
   },
   about: {
     title: "About Me",
-    description:
-      "Passionate about building high-performance web applications and delivering scalable solutions.",
     featured: {
       title: "Featured Skills",
       bullets: [
