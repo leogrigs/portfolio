@@ -3,7 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
-      sans: ["Open Sans", "sans-serif"],
+      sans: ["Work Sans", "sans-serif"],
     },
     extend: {
       keyframes: {
