@@ -11,6 +11,7 @@ import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
 import Welcome from "./sections/Welcome";
 import { fetchData } from "./store/slices/contentSlice";
+import { fetchDataV2 } from "./store/slices/contentSlice-v2";
 import { AppDispatch, RootState } from "./store/store";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
   useEffect(() => {
     setIsLoaderVisible(true);
     dispatch(fetchData(currentLocale));
+    dispatch(fetchDataV2(currentLocale));
   }, [dispatch, currentLocale]);
 
   useEffect(() => {

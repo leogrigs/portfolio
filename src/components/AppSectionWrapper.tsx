@@ -34,7 +34,7 @@ export default function AppSectionWrapper({
       <div className="max-w-6xl">{children}</div>
 
       {/* Next Section Button */}
-      <div className="mt-6 flex justify-center md:justify-end">
+      <div className="mt-6 flex justify-center">
         <AppNextSectionButton sectionId={nextSectionId} />
       </div>
     </section>
