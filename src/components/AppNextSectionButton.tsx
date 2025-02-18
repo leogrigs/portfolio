@@ -6,7 +6,7 @@ interface AppNextSectionButtonProps {
 }
 
 export default function AppNextSectionButton({
-  sectionId = "welcome",
+  sectionId = "home",
 }: AppNextSectionButtonProps) {
   return (
     <div className="flex justify-center">
