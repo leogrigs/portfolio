@@ -8,9 +8,9 @@ export default function Welcome() {
   });
 
   return (
-    <AppSectionWrapper sectionId="welcome" nextSectionId="about">
+    <AppSectionWrapper sectionId="home" nextSectionId="about">
       <div className="flex flex-col justify-center">
-        <h1 className="text-2xl leading-relaxed md:text-[56px] font-semibold text-center text-primaryColor">
+        <h1 className="text-2xl leading-relaxed md:text-[56px] font-semibold text-center text-neutral-1">
           {welcomeData.name}
         </h1>
         <h2 className="text-2xl leading-relaxed md:text-[56px] font-light text-center text-neutral-2">
