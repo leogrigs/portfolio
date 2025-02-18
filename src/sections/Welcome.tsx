@@ -10,10 +10,10 @@ export default function Welcome() {
   return (
     <AppSectionWrapper sectionId="welcome" nextSectionId="about">
       <div className="flex flex-col justify-center">
-        <h1 className="text-2xl leading-relaxed md:text-[56px] font-semibold text-center text-fontColor">
+        <h1 className="text-2xl leading-relaxed md:text-[56px] font-semibold text-center text-primaryColor">
           {welcomeData.name}
         </h1>
-        <h2 className="text-2xl leading-relaxed md:text-[56px] font-light text-center text-muted-foreground">
+        <h2 className="text-2xl leading-relaxed md:text-[56px] font-light text-center text-neutral-2">
           {welcomeData.description}
         </h2>
       </div>
