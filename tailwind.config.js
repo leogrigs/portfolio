@@ -75,6 +75,11 @@ export default {
           4: "hsl(var(--chart-4))",
           5: "hsl(var(--chart-5))",
         },
+        neutral: {
+          1: "var(--neutral-1)",
+          2: "var(--neutral-2)",
+        },
+        primaryColor: "var(--primary-1)",
       },
     },
   },
