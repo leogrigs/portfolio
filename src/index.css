@@ -72,8 +72,8 @@
     --radius: 0.5rem;
 
     --neutral-1: #1a1a1a;
-    --neutral-2: #1a1a1a50;
-    --primary-1: rgb(56, 110, 196);
+    --neutral-2: #1a1a1a80;
+    --primary-1: #386ec4;
   }
   .dark {
     --background: 0 0% 0%;
@@ -103,7 +103,7 @@
     --chart-5: 340 75% 55%;
 
     --neutral-1: #e3e4e6;
-    --neutral-2: #e3e4e650;
+    --neutral-2: #e3e4e680;
     --primary-1: #1486cc;
   }
 }
