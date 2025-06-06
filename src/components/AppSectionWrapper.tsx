@@ -26,7 +26,9 @@ export default function AppSectionWrapper({
           <span className="text-lg sm:text-xl lg:text-2xl text-fontColor font-light">
             {sectionNumber ? `${sectionNumber}. ` : ""}
           </span>
-          {sectionTitle}
+          <span>
+            {sectionTitle}
+          </span>
         </h2>
       </div>
 
