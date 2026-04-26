@@ -17,7 +17,7 @@ describe("AppSectionWrapper", () => {
       </AppSectionWrapper>
     );
 
-    expect(screen.getByText("1.")).toBeInTheDocument();
+    expect(screen.getByText("1")).toBeInTheDocument();
     expect(screen.getByText("Test Title")).toBeInTheDocument();
     expect(screen.getByText("Test Content")).toBeInTheDocument();
   });
