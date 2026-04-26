@@ -28,7 +28,19 @@ const contentSliceV2 = createSlice({
       })
       .addCase(fetchDataV2.fulfilled, (state, action) => {
         state.loading = false;
-        state.data = action.payload;
+        const payload = action.payload;
+        state.data = {
+          ...ENGLISH,
+          ...payload,
+          navbar: { ...ENGLISH.navbar, ...payload?.navbar },
+          home: { ...ENGLISH.home, ...payload?.home },
+          about: { ...ENGLISH.about, ...payload?.about },
+          experience: { ...ENGLISH.experience, ...payload?.experience },
+          projects: { ...ENGLISH.projects, ...payload?.projects },
+          contact: { ...ENGLISH.contact, ...payload?.contact },
+          links: { ...ENGLISH.links, ...payload?.links },
+          footer: { ...ENGLISH.footer, ...payload?.footer },
+        };
       })
       .addCase(fetchDataV2.rejected, (state, action) => {
         state.loading = false;
