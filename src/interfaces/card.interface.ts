@@ -4,4 +4,5 @@ export interface ICard {
   cardSubtitle: string;
   highlights: string[];
   technologies: string[];
+  image?: string;
 }
