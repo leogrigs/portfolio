@@ -32,6 +32,17 @@ export const PORTUGUESE = {
     name: "Leonardo Grigorio Ferreira",
     description:
       "Sou um Engenheiro de Software especializado em Desenvolvimento Web e Tecnologias Cloud",
+    role: "Engenheiro de Software",
+    status: "Disponível para novas oportunidades",
+    stats: [
+      { value: "4+", label: "Anos de carreira" },
+      { value: "AWS", label: "Certificado" },
+      { value: "Itaú", label: "Atualmente no" },
+    ],
+    cta: {
+      primary: "Entrar em contato",
+      secondary: "Ver projetos",
+    },
   },
   about: {
     title: "Sobre Mim",
