@@ -9,7 +9,6 @@ interface AppCardProps {
 export default function AppCard({ card }: AppCardProps) {
   return (
     <div className="flex flex-col justify-between border border-border min-h-[210px] max-h-[420px] w-full rounded-lg shadow-lg p-4 transition-transform hover:scale-105">
-      {/* Card Title */}
       <div>
         <h2 className="text-lg md:text-xl font-semibold text-foreground mb-1">
           <a
@@ -22,15 +21,16 @@ export default function AppCard({ card }: AppCardProps) {
           </a>
         </h2>
 
-        {/* Card Subtitle */}
         <p className="text-sm text-muted-foreground mb-4">
           {card.cardSubtitle}
         </p>
 
-        {/* Highlights List */}
         <ul className="space-y-2">
-          {card.highlights.map((highlight) => (
-            <li key={highlight} className="flex text-sm text-foreground">
+          {card.highlights.map((highlight, index) => (
+            <li
+              key={`${card.cardTitle}-highlight-${index}`}
+              className="flex text-sm text-foreground"
+            >
               <span>
                 <Check className="text-fontColor mr-2 mt-1" size={12} />
               </span>
@@ -41,10 +41,12 @@ export default function AppCard({ card }: AppCardProps) {
       </div>
 
       <div>
-        {/* Technologies */}
         <div className="flex flex-wrap gap-2 mt-6">
-          {card.technologies.map((technology) => (
-            <Badge variant={"outline"} key={technology}>
+          {card.technologies.map((technology, index) => (
+            <Badge
+              variant={"outline"}
+              key={`${card.cardTitle}-tech-${index}`}
+            >
               {technology}
             </Badge>
           ))}

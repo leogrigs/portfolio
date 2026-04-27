@@ -1,7 +1,6 @@
+import { setLocale } from "@/store/slices/localeSlice";
+import { AppDispatch, RootState } from "@/store/store";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchData } from "../store/slices/contentSlice";
-import { setLocale } from "../store/slices/localeSlice";
-import { AppDispatch, RootState } from "../store/store";
 import {
   Select,
   SelectContent,
@@ -21,14 +20,11 @@ export default function AppLanguageSelector() {
 
   const handleLanguageChange = (locale: string) => {
     dispatch(setLocale(locale));
-    dispatch(fetchData(locale));
   };
 
   return (
     <div className="relative inline-flex items-center group">
-      {/* Language Selector */}
       <div className="relative z-10 flex items-center space-x-2 px-4 border-0 rounded-lg text-neutral-1 hover:scale-[1.03] transition-all duration-300 group-hover:bg-opacity-95 group-focus:ring-2 group-focus:ring-offset-2 group-focus:ring-borderColor">
-        {/* Globe Icon */}
         <Select
           defaultValue={currentLocale}
           onValueChange={handleLanguageChange}

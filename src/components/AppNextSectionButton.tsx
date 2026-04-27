@@ -1,4 +1,4 @@
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
 
 interface AppNextSectionButtonProps {
@@ -16,11 +16,7 @@ export default function AppNextSectionButton({
         className="rounded-full size-8 hover:text-fontColor"
       >
         <a href={`#${sectionId}`}>
-          {sectionId === "welcome" ? (
-            <ChevronUp className="!size-6" />
-          ) : (
-            <ChevronDown className="!size-6" />
-          )}
+          <ChevronDown className="!size-6" />
         </a>
       </Button>
     </div>

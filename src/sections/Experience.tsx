@@ -5,16 +5,20 @@ import { useSelector } from "react-redux";
 
 export default function Experience() {
   const experienceData = useSelector((state: RootState) => {
-    const _data = state.content.data?.experience[0];
+    const entry = state.content.data?.experience[0];
     return {
-      company: _data?.company,
-      role: _data?.role,
-      period: _data?.period,
-      description: _data?.description,
-      experiences: _data?.projects,
+      company: entry?.company,
+      role: entry?.role,
+      period: entry?.period,
+      description: entry?.description,
+      experiences: entry?.projects,
       sectionTitle: state.content.data?.others.sections.experience,
     };
   });
+
+  if (!experienceData.role) {
+    return null;
+  }
 
   return (
     <AppSectionWrapper
@@ -25,7 +29,6 @@ export default function Experience() {
     >
       <div className="flex flex-col">
         <div className="w-full max-w-6xl">
-          {/* Experience Header */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold">
               {`${experienceData.role} `}
@@ -47,7 +50,6 @@ export default function Experience() {
           </div>
         </div>
 
-        {/* Projects */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {experienceData.experiences?.map((project) => (
             <AppCard card={project} key={project.cardTitle} />
