@@ -1,5 +1,6 @@
 import { ENGLISH } from "@/consts/en.const";
 import { fetchContentfulDataV2 } from "@/contentful/contentful";
+import { ContentStateV2 } from "@/interfaces/content-state.interface";
 import { PortfolioContent } from "@/interfaces/portfolio-content.interface";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
@@ -11,14 +12,15 @@ export const fetchDataV2 = createAsyncThunk(
   }
 );
 
-// TODO: make a interface for the state
+const initialState: ContentStateV2 = {
+  data: ENGLISH,
+  loading: false,
+  error: null,
+};
+
 const contentSliceV2 = createSlice({
   name: "contentV2",
-  initialState: {
-    data: ENGLISH,
-    loading: false,
-    error: null as string | null,
-  },
+  initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder

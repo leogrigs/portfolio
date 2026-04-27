@@ -14,6 +14,8 @@ import { fetchData } from "./store/slices/contentSlice";
 import { fetchDataV2 } from "./store/slices/contentSlice-v2";
 import { AppDispatch, RootState } from "./store/store";
 
+const LOADER_MIN_MS = 2500;
+
 function App() {
   const dispatch: AppDispatch = useDispatch();
   const { data } = useSelector((state: RootState) => state.content);
@@ -28,10 +30,10 @@ function App() {
 
   useEffect(() => {
     if (data) {
-      const timer = setTimeout(() => setIsLoaderVisible(false), 2500);
+      const timer = setTimeout(() => setIsLoaderVisible(false), LOADER_MIN_MS);
       return () => clearTimeout(timer);
     }
-  }, [isLoaderVisible, data]);
+  }, [data]);
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">

@@ -21,23 +21,19 @@ export default function About() {
       sectionNumber="02"
     >
       <div className="flex flex-col-reverse md:flex-row items-center md:items-start gap-8 md:gap-16 lg:gap-32">
-        {/* Text Section */}
         <div className="w-full md:w-1/2 space-y-4">
           {aboutData.bullets?.map((paragraph: string, index: number) => (
             <AppBullet bulletText={paragraph} key={`bullet-${index}`} />
           ))}
         </div>
 
-        {/* Image Section */}
         <div className="relative w-32 sm:w-40 md:w-56 lg:w-64">
-          {/* Profile Image */}
           <img
             className="rounded-full w-full h-auto object-cover border border-fontColor shadow-lg"
             src={aboutData.image}
             alt="Leonardo Grigorio Ferreira"
           />
 
-          {/* Badge */}
           <a
             href="https://www.credly.com/badges/08549e01-a715-4af4-9188-2f7cb18cf207"
             target="_blank"

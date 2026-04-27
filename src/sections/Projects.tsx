@@ -8,7 +8,7 @@ export default function Projects() {
     return {
       paragraph: state.content.data?.projects.paragraph,
       projects: state.content.data?.projects.projects,
-      sectionTitle: state.content.data?.others.sections.about,
+      sectionTitle: state.content.data?.others.sections.projects,
     };
   });
 
@@ -23,7 +23,6 @@ export default function Projects() {
         {projectsData.paragraph}
       </h3>
 
-      {/* Projects Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {projectsData.projects?.map((project, index) => (
           <AppCard card={project} key={`project-${index}`} />
