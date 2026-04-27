@@ -28,6 +28,18 @@ export interface Language {
 export interface Home {
   name: string;
   description: string;
+  role: string;
+  status: string;
+  stats: HomeStat[];
+  cta: {
+    primary: string;
+    secondary: string;
+  };
+}
+
+export interface HomeStat {
+  value: string;
+  label: string;
 }
 
 export interface BulletList {

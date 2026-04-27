@@ -4,6 +4,7 @@ export default {
   theme: {
     fontFamily: {
       sans: ["Work Sans", "sans-serif"],
+      display: ["Space Grotesk", "Work Sans", "sans-serif"],
     },
     extend: {
       keyframes: {
@@ -24,9 +25,22 @@ export default {
             borderColor: "white",
           },
         },
+        "bounce-soft": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(6px)" },
+        },
       },
       animation: {
         typing: "typing 2s steps(20) forwards, blink 1s steps(1) infinite",
+        "bounce-soft": "bounce-soft 2s ease-in-out infinite",
+      },
+      transitionTimingFunction: {
+        snappy: "cubic-bezier(0.22, 1, 0.36, 1)",
+      },
+      transitionDuration: {
+        350: "350ms",
+        450: "450ms",
+        600: "600ms",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,9 +94,15 @@ export default {
           2: "var(--neutral-2)",
         },
         primaryColor: "var(--primary-1)",
+        "accent-from": "hsl(var(--accent-from))",
+        "accent-to": "hsl(var(--accent-to))",
+        surface: {
+          1: "hsl(var(--surface-1))",
+          2: "hsl(var(--surface-2))",
+        },
       },
     },
   },
-  darkMode: true,
+  darkMode: "class",
   plugins: [require("tailwindcss-animate")],
 };

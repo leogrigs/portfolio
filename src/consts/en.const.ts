@@ -34,6 +34,17 @@ export const ENGLISH: PortfolioContent = {
     name: "Leonardo Grigorio Ferreira",
     description:
       "I’m a Software Engineer specialized in Web Development and Cloud Technologies",
+    role: "Software Engineer",
+    status: "Available for new opportunities",
+    stats: [
+      { value: "4+", label: "Years coding" },
+      { value: "AWS", label: "Certified" },
+      { value: "Itaú", label: "Currently at" },
+    ],
+    cta: {
+      primary: "Get in touch",
+      secondary: "View work",
+    },
   },
   about: {
     title: "About Me",
