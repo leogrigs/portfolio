@@ -1,4 +1,7 @@
+import { cn } from "@/lib/utils";
 import AppNextSectionButton from "./AppNextSectionButton";
+
+export type SectionHeight = "hero" | "standard" | "closing";
 
 interface AppSectionWrapperProps {
   children: React.ReactNode;
@@ -7,7 +10,14 @@ interface AppSectionWrapperProps {
   sectionId: string;
   nextSectionId?: string;
   hideHeader?: boolean;
+  height?: SectionHeight;
 }
+
+const heightClassName: Record<SectionHeight, string> = {
+  hero: "min-h-screen pb-10",
+  standard: "min-h-0 py-20 md:py-28",
+  closing: "min-h-0 py-20 md:py-28",
+};
 
 export default function AppSectionWrapper({
   children,
@@ -16,11 +26,18 @@ export default function AppSectionWrapper({
   sectionId,
   nextSectionId,
   hideHeader = false,
+  height = "standard",
 }: AppSectionWrapperProps) {
+  const isHero = height === "hero";
+
   return (
     <section
       id={sectionId}
-      className="relative min-h-screen flex flex-col justify-between px-6 pt-24 pb-10 mx-auto w-full max-w-6xl transition-colors duration-300"
+      className={cn(
+        "relative flex flex-col px-6 pt-20 md:pt-24 mx-auto w-full max-w-6xl transition-colors duration-300",
+        isHero ? "justify-between" : "gap-10",
+        heightClassName[height]
+      )}
     >
       {!hideHeader && (sectionNumber || sectionTitle) && (
         <div className="mb-10 flex items-end gap-4 md:gap-6">
@@ -38,11 +55,20 @@ export default function AppSectionWrapper({
         </div>
       )}
 
-      <div className="flex-1 flex flex-col justify-center">{children}</div>
-
-      <div className="mt-10 flex justify-center">
-        <AppNextSectionButton sectionId={nextSectionId} />
+      <div
+        className={cn(
+          "flex flex-col",
+          isHero && "flex-1 justify-center"
+        )}
+      >
+        {children}
       </div>
+
+      {nextSectionId && (
+        <div className="flex justify-center">
+          <AppNextSectionButton sectionId={nextSectionId} />
+        </div>
+      )}
     </section>
   );
 }

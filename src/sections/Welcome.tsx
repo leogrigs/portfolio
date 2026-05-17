@@ -20,7 +20,12 @@ export default function Welcome() {
   const { first, rest } = splitName(home.name);
 
   return (
-    <AppSectionWrapper sectionId="home" nextSectionId="about" hideHeader>
+    <AppSectionWrapper
+      sectionId="home"
+      nextSectionId="about"
+      hideHeader
+      height="hero"
+    >
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 bg-grid bg-grid-fade opacity-40" />
         <Spotlight />

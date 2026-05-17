@@ -31,6 +31,7 @@ export default function About() {
       nextSectionId="experience"
       sectionTitle={aboutData.sectionTitle ?? "About"}
       sectionNumber="02"
+      height="standard"
     >
       <div className="flex flex-col-reverse md:flex-row items-center md:items-start gap-10 md:gap-16 lg:gap-24">
         <Stagger className="w-full md:flex-1 space-y-5">
