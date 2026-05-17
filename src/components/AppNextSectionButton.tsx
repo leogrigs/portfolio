@@ -13,7 +13,7 @@ export default function AppNextSectionButton({
       <Button
         asChild
         variant="ghost"
-        className="rounded-full size-8 hover:text-fontColor"
+        className="rounded-full size-8 hover:text-foreground"
       >
         <a href={`#${sectionId}`}>
           {sectionId === "welcome" ? (
