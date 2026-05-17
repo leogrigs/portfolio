@@ -1,19 +1,23 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import AppResumeButton from "@/components/AppResumeButton";
+import { ENGLISH } from "@/consts/en.const";
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
-import AppResumeButton from "../../src/components/AppResumeButton";
-import { RootState } from "../../src/store/store";
+import { describe, expect, it } from "vitest";
 
-const mockStore = configureStore<RootState>();
+const mockStore = configureStore([]);
 
 describe("AppResumeButton", () => {
   it("renders the resume button with correct link", () => {
     const store = mockStore({
-      content: {
-        data: { resumeLink: "https://example.com/resume.pdf" },
+      contentV2: {
+        data: {
+          ...ENGLISH,
+          navbar: { ...ENGLISH.navbar, resume: "Resume" },
+          links: { ...ENGLISH.links, resume: "https://example.com/resume.pdf" },
+        },
       },
-    } as any);
+    });
 
     render(
       <Provider store={store}>
