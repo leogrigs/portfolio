@@ -1,7 +1,7 @@
 import { Analytics } from "@vercel/analytics/react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "./App.css";
+import AppFooter from "./components/AppFooter";
 import AppLoader from "./components/AppLoader";
 import { AppNavigationMenu } from "./components/AppNavigationMenu";
 import { ThemeProvider } from "./providers/theme-provider";
@@ -14,9 +14,16 @@ import { fetchData } from "./store/slices/contentSlice";
 import { fetchDataV2 } from "./store/slices/contentSlice-v2";
 import { AppDispatch, RootState } from "./store/store";
 
+const LOADER_MIN_MS = 400;
+
 function App() {
   const dispatch: AppDispatch = useDispatch();
-  const { data } = useSelector((state: RootState) => state.content);
+  const { data, loading: contentLoading } = useSelector(
+    (state: RootState) => state.content
+  );
+  const { loading: contentV2Loading } = useSelector(
+    (state: RootState) => state.contentV2
+  );
   const { currentLocale } = useSelector((state: RootState) => state.locale);
   const [isLoaderVisible, setIsLoaderVisible] = useState(true);
 
@@ -27,14 +34,21 @@ function App() {
   }, [dispatch, currentLocale]);
 
   useEffect(() => {
-    if (data) {
-      const timer = setTimeout(() => setIsLoaderVisible(false), 2500);
-      return () => clearTimeout(timer);
-    }
-  }, [isLoaderVisible, data]);
+    const isReady = Boolean(data) && !contentLoading && !contentV2Loading;
+    if (!isReady) return;
+
+    const timer = setTimeout(() => setIsLoaderVisible(false), LOADER_MIN_MS);
+    return () => clearTimeout(timer);
+  }, [data, contentLoading, contentV2Loading]);
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <a
+        href="#about"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+      >
+        Skip to content
+      </a>
       {isLoaderVisible ? (
         <AppLoader />
       ) : (
@@ -47,6 +61,7 @@ function App() {
             <Projects />
             <Contact />
           </div>
+          <AppFooter />
         </main>
       )}
       <Analytics />
