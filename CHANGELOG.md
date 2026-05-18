@@ -1,3 +1,32 @@
+# [1.18.0](https://github.com/leogrigs/portfolio/compare/v1.17.0...v1.18.0) (2026-05-18)
+
+
+### Bug Fixes
+
+* deep-merge contentful payload over local defaults in v2 slice ([e4c8412](https://github.com/leogrigs/portfolio/commit/e4c84121578bd38d5b98b4e686224892e54927c1))
+
+
+### Features
+
+* **a11y:** respect prefers-reduced-motion in scroll animations ([e2982da](https://github.com/leogrigs/portfolio/commit/e2982dafec4c9d23536a60a4da871d35a2018c97))
+* add display font, accent gradients, surface tiers, and motion utilities ([7569449](https://github.com/leogrigs/portfolio/commit/75694490da5746397c3798d1817bf3d71dabf9bb))
+* add featured variant, optional image, and gradient hover to AppCard ([879fa79](https://github.com/leogrigs/portfolio/commit/879fa79e9f6c85b75f9d12cbdfb3349162f7de6a))
+* add reusable FadeIn, Stagger, and Spotlight motion components ([990aa7b](https://github.com/leogrigs/portfolio/commit/990aa7b837e2c8e13f522dd8c7a2af0b7165d08f))
+* add useActiveSection hook for scroll-tracked navigation ([842f339](https://github.com/leogrigs/portfolio/commit/842f33931433a2786de050072403e430873db5e4))
+* **app:** add footer, skip link, and content-aware loader ([d9e101b](https://github.com/leogrigs/portfolio/commit/d9e101b885e7cee7ea03505355b4dc21fc09cd7c))
+* convert Experience into vertical timeline rendering all entries ([10bb164](https://github.com/leogrigs/portfolio/commit/10bb1642d4937644a1637b82df72f926f9162db7))
+* convert Projects into bento grid with featured first card ([622e728](https://github.com/leogrigs/portfolio/commit/622e728344310fbd47ceced3464dd7de391a881a))
+* extend home content with role, status, stats, and CTA fields ([16a3c69](https://github.com/leogrigs/portfolio/commit/16a3c692fee5b2b4557ab9b2cc2f172767f6d477))
+* implement content slice with async data fetching for portfolioV2 ([4cf458e](https://github.com/leogrigs/portfolio/commit/4cf458e849425ea7da1c9d577eae2b978088d004))
+* **layout:** add section height variants for better page rhythm ([7708446](https://github.com/leogrigs/portfolio/commit/77084468325676054cf58051d5115530ad72d2be))
+* **nav:** add mobile section menu with slide-out sheet ([55d2dc5](https://github.com/leogrigs/portfolio/commit/55d2dc57ec9d8e0ac4c81164a3904a01277c9bfd))
+* redesign About with circular framed photo and varied bullet icons ([6e68252](https://github.com/leogrigs/portfolio/commit/6e6825223237191706fef9ecfc78eea1e4443190))
+* redesign Contact with split layout and primary email CTA ([6019fb6](https://github.com/leogrigs/portfolio/commit/6019fb611b1385cbea6eae7da3156d00f0b94fc5))
+* redesign Welcome hero with stats row, CTAs, and spotlight background ([26f23ed](https://github.com/leogrigs/portfolio/commit/26f23ed2ab38dbe4334a7b15162f4b0eb4961f03))
+* replace top nav with floating pill and animated active indicator ([b0fb7fe](https://github.com/leogrigs/portfolio/commit/b0fb7fe4b8b4c5b327193d7a33c588935940d096))
+* support custom icon per AppBullet ([a93af0e](https://github.com/leogrigs/portfolio/commit/a93af0e5bce111ad2ad506abac9974202e421d3d))
+* **ui:** add shadcn sheet component for slide-out panels ([b0b80d2](https://github.com/leogrigs/portfolio/commit/b0b80d2af6cfb7f3be8627ab6b73da813ae94a40))
+
 # [1.17.0](https://github.com/leogrigs/portfolio/compare/v1.16.0...v1.17.0) (2025-02-07)
 
 
