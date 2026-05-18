@@ -1,27 +1,26 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Welcome from "@/sections/Welcome";
+import { ENGLISH } from "@/consts/en.const";
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
-import { RootState } from "../../src/store/store";
 
-const mockStore = configureStore<RootState>();
+const mockStore = configureStore([]);
 
 describe("Welcome", () => {
   it("renders welcome section with correct data", () => {
     const store = mockStore({
-      content: {
+      contentV2: {
         data: {
-          welcome: {
-            introduction: "Hello, my name is",
-            firstName: "John",
-            lastName: "Doe",
+          ...ENGLISH,
+          home: {
+            ...ENGLISH.home,
+            name: "John Doe",
             role: "Software Engineer",
-            paragraph: "I build amazing web applications.",
+            description: "I build amazing web applications.",
           },
         },
       },
-    } as any);
+    });
 
     render(
       <Provider store={store}>
@@ -29,7 +28,6 @@ describe("Welcome", () => {
       </Provider>
     );
 
-    expect(screen.getByText("Hello, my name is")).toBeInTheDocument();
     expect(screen.getByText("John")).toBeInTheDocument();
     expect(screen.getByText("Doe")).toBeInTheDocument();
     expect(screen.getByText("Software Engineer")).toBeInTheDocument();
@@ -38,12 +36,21 @@ describe("Welcome", () => {
     ).toBeInTheDocument();
   });
 
-  it("does not render any text if welcome data is missing", () => {
+  it("does not render role or description when home fields are empty", () => {
     const store = mockStore({
-      content: {
-        data: { welcome: undefined },
+      contentV2: {
+        data: {
+          ...ENGLISH,
+          home: {
+            ...ENGLISH.home,
+            name: "",
+            role: "",
+            description: "",
+            stats: [],
+          },
+        },
       },
-    } as any);
+    });
 
     render(
       <Provider store={store}>
@@ -51,9 +58,6 @@ describe("Welcome", () => {
       </Provider>
     );
 
-    expect(screen.queryByText(/Hello, my name is/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/John/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/Doe/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/Software Engineer/i)).not.toBeInTheDocument();
     expect(
       screen.queryByText(/I build amazing web applications./i)

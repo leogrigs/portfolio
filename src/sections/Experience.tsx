@@ -20,6 +20,7 @@ export default function Experience() {
       sectionTitle={sectionTitle ?? "Experience"}
       sectionNumber="03"
       nextSectionId="projects"
+      height="standard"
     >
       <div className="relative md:pl-8">
         <span

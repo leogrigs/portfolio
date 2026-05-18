@@ -24,6 +24,7 @@ export default function Contact() {
       sectionId="contact"
       sectionNumber="05"
       sectionTitle={contactData.sectionTitle ?? "Contact"}
+      height="closing"
     >
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start">
         <FadeIn className="lg:col-span-3">
@@ -49,7 +50,7 @@ export default function Contact() {
           </div>
         </FadeIn>
 
-        <Stagger className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-3 w-full">
+        <Stagger className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3 w-full">
           {CONTACTS.map((link) => (
             <StaggerItem key={link.label}>
               <a
@@ -58,7 +59,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="group relative flex items-center gap-4 p-4 rounded-xl border border-border bg-surface-1 hover:bg-surface-2 transition-colors"
               >
-                <div className="flex items-center justify-center w-11 h-11 rounded-lg bg-background border border-border text-foreground group-hover:text-fontColor transition-colors shrink-0 [&_svg]:size-5">
+                <div className="flex items-center justify-center w-11 h-11 rounded-lg bg-background border border-border text-foreground group-hover:text-foreground transition-colors shrink-0 [&_svg]:size-5">
                   {link.icon}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -69,7 +70,7 @@ export default function Contact() {
                     {link.href.replace(/^(https?:\/\/|mailto:)/, "")}
                   </p>
                 </div>
-                <ArrowUpRight className="size-4 text-muted-foreground group-hover:text-fontColor transition-colors shrink-0" />
+                <ArrowUpRight className="size-4 text-muted-foreground group-hover:text-foreground transition-colors shrink-0" />
               </a>
             </StaggerItem>
           ))}

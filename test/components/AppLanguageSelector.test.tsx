@@ -1,5 +1,6 @@
 import AppLanguageSelector from "@/components/AppLanguageSelector";
 import contentReducer, { fetchData } from "@/store/slices/contentSlice";
+import contentReducerV2 from "@/store/slices/contentSlice-v2";
 import localeReducer, { setLocale } from "@/store/slices/localeSlice";
 import { configureStore } from "@reduxjs/toolkit";
 import { fireEvent, render, screen } from "@testing-library/react";
@@ -20,6 +21,7 @@ describe("AppLanguageSelector", () => {
       reducer: {
         locale: localeReducer,
         content: contentReducer,
+        contentV2: contentReducerV2,
       },
     });
 
@@ -34,7 +36,7 @@ describe("AppLanguageSelector", () => {
     expect(screen.getByText("English")).toBeInTheDocument();
 
     fireEvent.click(screen.getByText("English"));
-    fireEvent.click(screen.getByText("Português"));
+    fireEvent.click(screen.getByText("Portuguese"));
 
     expect(store.dispatch).toHaveBeenCalledWith(setLocale("pt-BR"));
     expect(store.dispatch).toHaveBeenCalledWith(fetchData("pt-BR"));

@@ -45,4 +45,25 @@ describe("AppSectionWrapper", () => {
 
     expect(screen.getByText("Next Section")).toBeInTheDocument();
   });
+
+  it("does not render next section button when nextSectionId is omitted", () => {
+    render(
+      <AppSectionWrapper sectionId="test-section" height="closing">
+        <p>Content</p>
+      </AppSectionWrapper>
+    );
+
+    expect(screen.queryByText("Next Section")).not.toBeInTheDocument();
+  });
+
+  it("applies hero height class for hero variant", () => {
+    const { container } = render(
+      <AppSectionWrapper sectionId="hero-section" height="hero" hideHeader>
+        <p>Hero</p>
+      </AppSectionWrapper>
+    );
+
+    const section = container.querySelector("section");
+    expect(section).toHaveClass("min-h-screen");
+  });
 });

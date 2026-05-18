@@ -23,6 +23,7 @@ export default function Projects() {
       sectionNumber="04"
       sectionId="projects"
       nextSectionId="contact"
+      height="standard"
     >
       {projectsData.paragraph && (
         <FadeIn>
