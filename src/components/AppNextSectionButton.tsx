@@ -22,6 +22,7 @@ export default function AppNextSectionButton({
             <ChevronDown className="!size-6" />
           )}
         </a>
+        <span>test</span>
       </Button>
     </div>
   );
