@@ -29,23 +29,42 @@ class MockIntersectionObserver {
   thresholds = [];
 }
 
-if (typeof window !== "undefined" && !window.matchMedia) {
-  window.matchMedia = (query: string) => ({
-    matches: false,
-    media: query,
-    onchange: null,
-    addListener: () => {},
-    removeListener: () => {},
-    addEventListener: () => {},
-    removeEventListener: () => {},
-    dispatchEvent: () => false,
-  });
+class MockResizeObserver {
+  observe = () => {};
+  unobserve = () => {};
+  disconnect = () => {};
 }
 
-if (typeof window !== "undefined" && !("IntersectionObserver" in window)) {
-  (window as unknown as { IntersectionObserver: typeof IntersectionObserver }).IntersectionObserver =
-    MockIntersectionObserver as unknown as typeof IntersectionObserver;
-  (
-    globalThis as unknown as { IntersectionObserver: typeof IntersectionObserver }
-  ).IntersectionObserver = MockIntersectionObserver as unknown as typeof IntersectionObserver;
+const globals = globalThis as unknown as Record<string, unknown>;
+
+if (typeof window !== "undefined") {
+  if (!window.matchMedia) {
+    window.matchMedia = (query: string) =>
+      ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: () => {},
+        removeListener: () => {},
+        addEventListener: () => {},
+        removeEventListener: () => {},
+        dispatchEvent: () => false,
+      }) as MediaQueryList;
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    globals.IntersectionObserver = MockIntersectionObserver;
+    (window as unknown as Record<string, unknown>).IntersectionObserver =
+      MockIntersectionObserver;
+  }
+
+  if (!("ResizeObserver" in window)) {
+    globals.ResizeObserver = MockResizeObserver;
+  }
+
+  // jsdom has no canvas; returning null exercises the text fallback
+  HTMLCanvasElement.prototype.getContext = (() =>
+    null) as unknown as HTMLCanvasElement["getContext"];
+
+  window.scrollTo = (() => {}) as typeof window.scrollTo;
 }
