@@ -1,72 +1,103 @@
 import { Analytics } from "@vercel/analytics/react";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import AppFooter from "./components/AppFooter";
-import AppLoader from "./components/AppLoader";
-import { AppNavigationMenu } from "./components/AppNavigationMenu";
+import { AnimatePresence, MotionConfig } from "framer-motion";
+import { useCallback, useEffect, useState } from "react";
+import Contact from "./chapters/Contact";
+import Hero from "./chapters/Hero";
+import Impact from "./chapters/Impact";
+import Path from "./chapters/Path";
+import { Intro } from "./components/Intro";
+import { Nav } from "./components/Nav";
+import ParticleField from "./components/ParticleField";
+import { CHAPTER_IDS } from "./content";
+import { useChapter } from "./hooks/useChapter";
+import { useReducedMotion } from "./hooks/useReducedMotion";
+import { useContent } from "./i18n/context";
+import { LocaleProvider } from "./i18n/LocaleProvider";
 import { ThemeProvider } from "./providers/theme-provider";
-import About from "./sections/About";
-import Contact from "./sections/Contact";
-import Experience from "./sections/Experience";
-import Projects from "./sections/Projects";
-import Welcome from "./sections/Welcome";
-import { fetchData } from "./store/slices/contentSlice";
-import { fetchDataV2 } from "./store/slices/contentSlice-v2";
-import { AppDispatch, RootState } from "./store/store";
 
-const LOADER_MIN_MS = 400;
+export const INTRO_STORAGE_KEY = "portfolio-intro-seen";
 
-function App() {
-  const dispatch: AppDispatch = useDispatch();
-  const { data, loading: contentLoading } = useSelector(
-    (state: RootState) => state.content
-  );
-  const { loading: contentV2Loading } = useSelector(
-    (state: RootState) => state.contentV2
-  );
-  const { currentLocale } = useSelector((state: RootState) => state.locale);
-  const [isLoaderVisible, setIsLoaderVisible] = useState(true);
+function shouldPlayIntro(reduced: boolean) {
+  if (reduced) return false;
+  try {
+    return sessionStorage.getItem(INTRO_STORAGE_KEY) !== "1";
+  } catch {
+    return true;
+  }
+}
+
+function Site() {
+  const content = useContent();
+  const reduced = useReducedMotion();
+  const [introVisible, setIntroVisible] = useState(() => shouldPlayIntro(reduced));
+  const [particlesOn, setParticlesOn] = useState<boolean | null>(null);
+  const chapter = useChapter(CHAPTER_IDS);
+  const ready = !introVisible;
+
+  const finishIntro = useCallback(() => {
+    setIntroVisible(false);
+    try {
+      sessionStorage.setItem(INTRO_STORAGE_KEY, "1");
+    } catch {
+      // the intro simply plays again next time
+    }
+  }, []);
 
   useEffect(() => {
-    setIsLoaderVisible(true);
-    dispatch(fetchData(currentLocale));
-    dispatch(fetchDataV2(currentLocale));
-  }, [dispatch, currentLocale]);
-
-  useEffect(() => {
-    const isReady = Boolean(data) && !contentLoading && !contentV2Loading;
-    if (!isReady) return;
-
-    const timer = setTimeout(() => setIsLoaderVisible(false), LOADER_MIN_MS);
-    return () => clearTimeout(timer);
-  }, [data, contentLoading, contentV2Loading]);
+    if (!introVisible) return;
+    // a fresh visit always starts at the top, so the intro hands off to the hero
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+    const root = document.documentElement;
+    root.style.overflow = "hidden";
+    return () => {
+      root.style.overflow = "";
+    };
+  }, [introVisible]);
 
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <MotionConfig reducedMotion="user">
       <a
-        href="#about"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+        href="#impact"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[80] focus:rounded-full focus:bg-foreground focus:px-4 focus:py-2 focus:text-background"
       >
-        Skip to content
+        {content.meta.skip}
       </a>
-      {isLoaderVisible ? (
-        <AppLoader />
-      ) : (
-        <main className="bg-background">
-          <AppNavigationMenu />
-          <div className="fade-in">
-            <Welcome />
-            <About />
-            <Experience />
-            <Projects />
-            <Contact />
-          </div>
-          <AppFooter />
-        </main>
-      )}
+
+      <AnimatePresence>
+        {introVisible && <Intro key="intro" onDone={finishIntro} />}
+      </AnimatePresence>
+
+      <ParticleField
+        scene={chapter}
+        heroLines={content.hero.particleLines}
+        contactWord={content.contact.particleWord}
+        active={ready}
+        reducedMotion={reduced}
+        onSupportChange={setParticlesOn}
+      />
+      <div aria-hidden className="grain pointer-events-none fixed inset-0 z-[5]" />
+
+      <Nav active={chapter} />
+
+      <main>
+        <Hero ready={ready} particlesOn={particlesOn} />
+        <Impact />
+        <Path />
+        <Contact />
+      </main>
+
       <Analytics />
-    </ThemeProvider>
+    </MotionConfig>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <LocaleProvider>
+        <Site />
+      </LocaleProvider>
+    </ThemeProvider>
+  );
+}
