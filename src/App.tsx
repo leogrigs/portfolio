@@ -7,7 +7,8 @@ import Impact from "./chapters/Impact";
 import Path from "./chapters/Path";
 import { Intro } from "./components/Intro";
 import { Nav } from "./components/Nav";
-import ParticleField from "./components/ParticleField";
+import Backdrop from "./components/Backdrop";
+import { CursorGlow } from "./components/CursorGlow";
 import { CHAPTER_IDS } from "./content";
 import { useChapter } from "./hooks/useChapter";
 import { useReducedMotion } from "./hooks/useReducedMotion";
@@ -30,7 +31,6 @@ function Site() {
   const content = useContent();
   const reduced = useReducedMotion();
   const [introVisible, setIntroVisible] = useState(() => shouldPlayIntro(reduced));
-  const [particlesOn, setParticlesOn] = useState<boolean | null>(null);
   const chapter = useChapter(CHAPTER_IDS);
   const ready = !introVisible;
 
@@ -68,20 +68,14 @@ function Site() {
         {introVisible && <Intro key="intro" onDone={finishIntro} />}
       </AnimatePresence>
 
-      <ParticleField
-        scene={chapter}
-        heroLines={content.hero.particleLines}
-        contactWord={content.contact.particleWord}
-        active={ready}
-        reducedMotion={reduced}
-        onSupportChange={setParticlesOn}
-      />
+      <Backdrop scene={chapter} active={ready} reducedMotion={reduced} />
+      <CursorGlow />
       <div aria-hidden className="grain pointer-events-none fixed inset-0 z-[5]" />
 
       <Nav active={chapter} />
 
       <main>
-        <Hero ready={ready} particlesOn={particlesOn} />
+        <Hero ready={ready} />
         <Impact />
         <Path />
         <Contact />

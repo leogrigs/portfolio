@@ -18,7 +18,7 @@ type StepData = Steps[number];
 const BEFORE_CLASS =
   "block font-display text-[clamp(3.4rem,14vw,8.5rem)] font-medium leading-[0.9] tracking-tight text-muted md:text-[clamp(3.4rem,9.5vw,8.5rem)]";
 const AFTER_CLASS =
-  "block font-serif text-[clamp(3.8rem,16vw,10rem)] italic leading-[0.9] text-accent md:text-[clamp(3.8rem,11.5vw,10rem)]";
+  "block font-display text-[clamp(3.8rem,16vw,10rem)] font-medium leading-[0.9] tracking-tight text-accent md:text-[clamp(3.8rem,11.5vw,10rem)]";
 const LABEL_CLASS =
   "font-mono text-[11px] uppercase tracking-[0.22em] text-muted";
 

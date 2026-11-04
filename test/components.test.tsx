@@ -1,11 +1,14 @@
 import { act, fireEvent, render, screen } from "@testing-library/react";
 import { Intro } from "../src/components/Intro";
 import { Nav } from "../src/components/Nav";
-import ParticleField from "../src/components/ParticleField";
+import Backdrop from "../src/components/Backdrop";
+import { CursorGlow } from "../src/components/CursorGlow";
+import { NAME_HOLD_MS } from "../src/components/display/HeroName";
 import { RiseText } from "../src/components/text/RiseText";
 import { ThemeToggle } from "../src/components/ThemeToggle";
 import { LINKS } from "../src/content";
-import { renderWithProviders } from "./utils";
+import { setHeroWord, useHeroWord } from "../src/lib/heroWord";
+import { mockMatchMedia, REDUCED_MOTION, renderWithProviders } from "./utils";
 
 describe("RiseText", () => {
   it("keeps the sentence readable", () => {
@@ -65,84 +68,132 @@ describe("ThemeToggle", () => {
   });
 });
 
-describe("ParticleField", () => {
-  it("reports when canvas is unavailable", () => {
-    const onSupportChange = vi.fn();
-    render(
-      <ParticleField
-        scene="home"
-        heroLines={["A"]}
-        contactWord="hi"
-        active
-        reducedMotion={false}
-        onSupportChange={onSupportChange}
-      />
-    );
-    expect(onSupportChange).toHaveBeenCalledWith(false);
+function fakeContext() {
+  const stroke = vi.fn();
+  const ctx = {
+    setTransform: vi.fn(),
+    clearRect: vi.fn(),
+    beginPath: vi.fn(),
+    moveTo: vi.fn(),
+    lineTo: vi.fn(),
+    arc: vi.fn(),
+    fill: vi.fn(),
+    stroke,
+    globalAlpha: 1,
+    lineWidth: 1,
+    lineCap: "butt",
+    strokeStyle: "",
+    fillStyle: "",
+  };
+  return { ctx, stroke };
+}
+
+function HeroWordProbe() {
+  return <span data-testid="hero-word">{useHeroWord()}</span>;
+}
+
+describe("Backdrop", () => {
+  it("renders without canvas support", () => {
+    const { container } = render(<Backdrop scene="impact" active reducedMotion={false} />);
+    expect(container.querySelector("canvas")).toBeInTheDocument();
   });
 
-  it("draws a static frame per scene with reduced motion", () => {
-    const fillRect = vi.fn();
-    const ctx = {
-      setTransform: vi.fn(),
-      clearRect: vi.fn(),
-      fillRect,
-      measureText: () => ({ width: 50, actualBoundingBoxAscent: 70, actualBoundingBoxDescent: 0 }),
-      fillText: vi.fn(),
-      getImageData: (_x: number, _y: number, w: number, h: number) => ({
-        data: new Uint8ClampedArray(w * h * 4).fill(255),
-      }),
-      globalAlpha: 1,
-      fillStyle: "",
-      font: "",
-    };
+  it("draws the clock and the wave only on their chapters", () => {
+    const { ctx, stroke } = fakeContext();
     const original = HTMLCanvasElement.prototype.getContext;
     HTMLCanvasElement.prototype.getContext = (() => ctx) as unknown as HTMLCanvasElement["getContext"];
-    const onSupportChange = vi.fn();
 
-    const { rerender, unmount } = render(
-      <ParticleField
-        scene="home"
-        heroLines={["LEO"]}
-        contactWord="hi"
-        active
-        reducedMotion
-        onSupportChange={onSupportChange}
-      />
-    );
-    expect(onSupportChange).toHaveBeenCalledWith(true);
-    expect(fillRect).toHaveBeenCalled();
+    const { rerender, unmount } = render(<Backdrop scene="home" active reducedMotion />);
+    expect(stroke).not.toHaveBeenCalled();
 
-    for (const scene of ["impact", "path", "contact"] as const) {
-      fillRect.mockClear();
-      rerender(
-        <ParticleField scene={scene} heroLines={["LEO"]} contactWord="hi" active reducedMotion />
-      );
-      expect(fillRect).toHaveBeenCalled();
+    for (const scene of ["impact", "path"] as const) {
+      stroke.mockClear();
+      rerender(<Backdrop scene={scene} active reducedMotion />);
+      expect(stroke).toHaveBeenCalled();
     }
+
+    stroke.mockClear();
+    rerender(<Backdrop scene="contact" active reducedMotion />);
+    expect(stroke).not.toHaveBeenCalled();
 
     unmount();
     HTMLCanvasElement.prototype.getContext = original;
   });
 });
 
+describe("CursorGlow", () => {
+  it("only renders for a real hover pointer", () => {
+    const { container, unmount } = render(<CursorGlow />);
+    expect(container.querySelector(".cursor-glow")).toBeNull();
+    unmount();
+
+    const restore = mockMatchMedia((q) => q.includes("hover: hover"));
+    const { container: withMouse } = render(<CursorGlow />);
+    expect(withMouse.querySelector(".cursor-glow")).toHaveAttribute("aria-hidden", "true");
+    restore();
+  });
+});
+
 describe("Hero", () => {
-  it("shows the full name as the page heading", async () => {
+  afterEach(() => act(() => setHeroWord(0)));
+
+  it("shows the full name as the heading and in display type", async () => {
     const { default: Hero } = await import("../src/chapters/Hero");
-    renderWithProviders(<Hero ready particlesOn />);
+    renderWithProviders(<Hero ready />);
     expect(
       screen.getByRole("heading", { level: 1, name: "Leonardo Grigorio Ferreira" })
     ).toBeInTheDocument();
-    expect(screen.queryByText("LEONARDO")).not.toBeInTheDocument();
+    expect(screen.getByTestId("hero-name").textContent).toContain("LEONARDO");
     expect(screen.getByRole("link", { name: "Scroll down" })).toHaveAttribute(
       "href",
       "#impact"
     );
   });
 
-  it("falls back to type when particles are unavailable", async () => {
+  it("highlights the word of the name on display", async () => {
     const { default: Hero } = await import("../src/chapters/Hero");
-    renderWithProviders(<Hero ready particlesOn={false} />);
-    expect(screen.getByText("LEONARDO")).toBeInTheDocument();
+    renderWithProviders(<Hero ready />);
+    act(() => setHeroWord(1));
+    expect(screen.getByText("Grigorio")).toHaveClass("text-accent");
+    expect(screen.getByText("Leonardo")).not.toHaveClass("text-accent");
+  });
+
+  it("cycles the display name through every word", async () => {
+    vi.useFakeTimers({ toFake: ["setInterval", "clearInterval"] });
+    const { default: Hero } = await import("../src/chapters/Hero");
+    renderWithProviders(
+      <>
+        <Hero ready />
+        <HeroWordProbe />
+      </>
+    );
+    expect(screen.getByTestId("hero-word")).toHaveTextContent("0");
+
+    act(() => {
+      vi.advanceTimersByTime(NAME_HOLD_MS + 50);
+    });
+    expect(screen.getByTestId("hero-word")).toHaveTextContent("1");
+    expect(screen.getByTestId("hero-name").textContent).toContain("GRIGORIO");
+
+    act(() => {
+      vi.advanceTimersByTime(NAME_HOLD_MS * 2);
+    });
+    expect(screen.getByTestId("hero-word")).toHaveTextContent("0");
+    vi.useRealTimers();
+  });
+
+  it("keeps one static word with reduced motion", async () => {
+    vi.useFakeTimers({ toFake: ["setInterval", "clearInterval"] });
+    const restore = mockMatchMedia(REDUCED_MOTION);
+    const { default: Hero } = await import("../src/chapters/Hero");
+    renderWithProviders(<Hero ready />);
+    act(() => {
+      vi.advanceTimersByTime(NAME_HOLD_MS * 2);
+    });
+    const text = screen.getByTestId("hero-name").textContent ?? "";
+    expect(text).toContain("LEONARDO");
+    expect(text).not.toContain("GRIGORIO");
+    restore();
+    vi.useRealTimers();
   });
 });

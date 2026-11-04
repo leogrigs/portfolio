@@ -28,7 +28,7 @@ export const pt: Content = {
   },
   hero: {
     name: "Leonardo Grigorio Ferreira",
-    particleLines: ["LEONARDO"],
+    nameWords: ["LEONARDO", "GRIGORIO", "FERREIRA"],
     tagline: "Engenheiro de software focado em *automação com IA*.",
     facts: [
       "Forward Deployed Engineer na Tela",
@@ -145,7 +145,7 @@ export const pt: Content = {
     ],
   },
   contact: {
-    particleWord: "olá",
+    greeting: "olá",
     emailLabel: "E-mail",
     copy: "Copiar e-mail",
     copied: "Copiado",

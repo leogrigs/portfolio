@@ -58,7 +58,7 @@ export function RiseText({
             <motion.span
               className={cn(
                 "inline-block",
-                w.em && "font-serif italic font-normal text-accent"
+                w.em && "text-accent"
               )}
               variants={word}
             >

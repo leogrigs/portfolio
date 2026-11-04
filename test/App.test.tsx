@@ -51,10 +51,10 @@ describe("App", () => {
     );
   });
 
-  it("shows the particle word as type when the canvas is unavailable", () => {
+  it("draws the name in display type", () => {
     sessionStorage.setItem(INTRO_STORAGE_KEY, "1");
     render(<App />);
-    expect(screen.getByText("LEONARDO")).toBeInTheDocument();
+    expect(screen.getByTestId("hero-name").textContent).toContain("LEONARDO");
   });
 
   it("switches the whole page to Portuguese", () => {

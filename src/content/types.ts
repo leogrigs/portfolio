@@ -6,7 +6,7 @@ export type ChapterId = (typeof CHAPTER_IDS)[number];
 
 /**
  * Text fields marked as "rich" accept `*emphasis*` markers, rendered in the
- * italic serif. Everything else is plain text.
+ * accent colour. Everything else is plain text.
  */
 export interface Content {
   meta: {
@@ -27,8 +27,11 @@ export interface Content {
   };
   hero: {
     name: string;
-    /** drawn by the particle field; decorative */
-    particleLines: string[];
+    /**
+     * The big display name cycles through these one at a time (decorative).
+     * They match the words of `name`, which highlights the one on screen.
+     */
+    nameWords: string[];
     /** rich */
     tagline: string;
     facts: string[];
@@ -64,7 +67,8 @@ export interface Content {
     stack: string[];
   };
   contact: {
-    particleWord: string;
+    /** big decorative word behind the email */
+    greeting: string;
     emailLabel: string;
     copy: string;
     copied: string;

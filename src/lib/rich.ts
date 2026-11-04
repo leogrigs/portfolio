@@ -1,6 +1,6 @@
 export interface RichWord {
   text: string;
-  /** rendered with the italic serif accent */
+  /** rendered in the accent colour */
   em: boolean;
   /** attaches to the previous word without a space (e.g. punctuation after an emphasis) */
   glue: boolean;

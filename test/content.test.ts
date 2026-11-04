@@ -47,6 +47,13 @@ describe("content", () => {
     }
   });
 
+  it("cycles the display name through the words of the name", () => {
+    for (const locale of ["pt", "en"] as const) {
+      const { name, nameWords } = CONTENT[locale].hero;
+      expect(nameWords).toEqual(name.toUpperCase().split(" "));
+    }
+  });
+
   it("marks only the latest role as current", () => {
     for (const locale of ["pt", "en"] as const) {
       const { milestones } = CONTENT[locale].path;

@@ -1,19 +1,15 @@
+import { HeroName } from "@/components/display/HeroName";
 import { RiseText } from "@/components/text/RiseText";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { useContent } from "@/i18n/context";
-import { EASE_OUT } from "@/lib/utils";
+import { useHeroWord } from "@/lib/heroWord";
+import { cn, EASE_OUT } from "@/lib/utils";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 
-export default function Hero({
-  ready,
-  particlesOn,
-}: {
-  ready: boolean;
-  /** null while unknown; false when the canvas is unavailable and the word must be text */
-  particlesOn: boolean | null;
-}) {
+export default function Hero({ ready }: { ready: boolean }) {
   const { hero } = useContent();
+  const activeWord = useHeroWord();
   const reduced = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -22,6 +18,8 @@ export default function Hero({
   });
   const opacity = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
   const y = useTransform(scrollYProgress, [0, 1], [0, -90]);
+  const nameOpacity = useTransform(scrollYProgress, [0.1, 0.7], [1, 0]);
+  const nameY = useTransform(scrollYProgress, [0, 1], [0, -160]);
 
   const fade = (delay: number) => ({
     initial: { opacity: 0, y: 14 },
@@ -35,15 +33,11 @@ export default function Hero({
       ref={ref}
       className="relative z-10 flex min-h-[100svh] flex-col justify-end px-5 pb-8 md:px-10 md:pb-10"
     >
-      {/* the particle field draws this word; show it as type when canvas is unavailable */}
-      {particlesOn === false && (
-        <p
-          aria-hidden
-          className="absolute inset-x-5 top-[24%] text-center font-display text-[17vw] font-bold uppercase leading-none tracking-tighter md:inset-x-10 md:top-[22%] md:text-[13vw]"
-        >
-          {hero.particleLines.join(" ")}
-        </p>
-      )}
+      <div className="pointer-events-none absolute inset-x-0 top-[38%] -translate-y-1/2 sm:top-[40%]">
+        <motion.div style={reduced ? undefined : { opacity: nameOpacity, y: nameY }}>
+          <HeroName words={hero.nameWords} ready={ready} motionOn={!reduced} />
+        </motion.div>
+      </div>
 
       <motion.div
         style={reduced ? undefined : { opacity, y }}
@@ -55,7 +49,21 @@ export default function Hero({
             className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.22em] text-foreground md:text-xs"
           >
             <span aria-hidden className="live-dot size-1.5 rounded-full bg-accent" />
-            {hero.name}
+            <span>
+              {hero.name.split(" ").map((part, i) => (
+                <Fragment key={part}>
+                  {i > 0 && " "}
+                  <span
+                    className={cn(
+                      "transition-colors duration-700",
+                      i === activeWord && "text-accent"
+                    )}
+                  >
+                    {part}
+                  </span>
+                </Fragment>
+              ))}
+            </span>
           </motion.h1>
           <RiseText
             text={hero.tagline}

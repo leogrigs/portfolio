@@ -91,6 +91,13 @@ describe("Contact", () => {
     expect(screen.getByRole("button", { name: en.contact.copied })).toBeInTheDocument();
   });
 
+  it("sets the greeting in display type behind the email", () => {
+    renderWithProviders(<Contact />);
+    const greeting = screen.getByTestId("contact-greeting");
+    expect(greeting).toHaveAttribute("aria-hidden", "true");
+    expect(greeting.firstElementChild?.textContent).toBe(en.contact.greeting);
+  });
+
   it("shows the time in São Paulo", () => {
     renderWithProviders(<Contact />);
     expect(screen.getByText(en.contact.clockLabel, { exact: false })).toBeInTheDocument();

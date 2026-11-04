@@ -1,4 +1,5 @@
 import { ChapterHeader } from "@/components/ChapterHeader";
+import { DisplayWord } from "@/components/display/DisplayWord";
 import { LocalClock } from "@/components/LocalClock";
 import { Magnetic } from "@/components/Magnetic";
 import { LINKS } from "@/content";
@@ -51,6 +52,14 @@ export default function Contact() {
       aria-labelledby="contact-title"
       className="relative z-10 flex min-h-[100svh] flex-col px-5 pb-6 pt-28 md:px-10 md:pt-40"
     >
+      <div className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2">
+        <DisplayWord
+          word={contact.greeting}
+          testId="contact-greeting"
+          className="text-foreground/[0.07]"
+        />
+      </div>
+
       <ChapterHeader index={3} id="contact-title" title={nav.chapters.contact} />
 
       <div className="my-auto py-16">
